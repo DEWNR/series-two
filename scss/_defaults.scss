@@ -1,0 +1,48 @@
+/* Default dependencies to make sure no required variables are left undefined, referenced by multiple SCSS files. */
+
+/* File prefix and paths */
+$site-prefix: dewnr !default;
+
+/* Colours */
+$main-brand-color: black !default;
+$pale-brand-color: white !default;
+$mid-brand-color: $pale-brand-color !default;
+$dark-brand-color: $main-brand-color !default;
+$header-background-color: $main-brand-color !default;
+$body-text-color: #333 !default;
+$header-text-color: white !default;
+$header-text-opacity: null !default;
+$sitemap-text-color: $pale-brand-color !default;
+$dark-background-color: #666 !default;
+$pale-background-color: white !default;
+
+/* Layout */
+$base-header-height: 120px !default;
+$header-background-position: left !default;
+$base-logotype-height: $base-header-height !default;
+$logotype-width: 320px !default;
+$logotype-height: 120px !default;
+$logotype-margin-top: 0px !default;
+$logotype-margin-left: 0px !default;
+$sitemap-mobile-margin: 4.5% 0 0 18% !default;
+
+/* Images */
+$header-background-image: none !default;
+$header-background-svg: none !default;
+$header-logotype-image: url(#{$site-prefix}-logotype.png) !default;
+$header-logotype-svg: url(#{$svg-path}#{$site-prefix}-logotype.svg) !default;
+$header-reverse-logotype-image: url(#{$site-prefix}-logotype-reverse.png) !default;
+$header-reverse-logotype-svg: url(#{$svg-path}#{$site-prefix}-logotype-reverse.svg) !default;
+$sitemap-background-image: url(#{$site-prefix}-sitemap-overlay.png) !default;
+$sitemap-background-svg: url(#{$svg-path}#{$site-prefix}-sitemap-overlay.svg) !default;
+$find-us-icon: null !default;
+
+/* Fonts */
+$brand-font: 'Frutiger W01', Helvetica, Arial, sans-serif !default;
+
+/* Mobile overrides */
+$mobile-header-background-size: auto 80% !default;
+$mobile-header-background-color: $header-background-color !default;
+$mobile-header-text-color: $header-text-color !default;
+$mobile-header-icons: light !default;
+$mobile-header-height: null !default;

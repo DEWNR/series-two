@@ -1,0 +1,29 @@
+/* Site-specific variables, referenced by multiple SCSS files. */
+/* Cleland Wildlife Park */
+
+/* File prefix */
+$site-prefix: cwp;
+
+/* Colours */
+$main-brand-color: #016836;
+$pale-brand-color: $main-brand-color * 0.2 + white * 0.8; // Was originally #98b09a but this was too dark (didn't provide enough contrast)
+$header-text-color: $pale-brand-color;
+
+/* Layout */
+$header-background-position: left;
+$logotype-width: 210px;
+$logotype-height: 80px;
+$logotype-margin-top: 10px;
+$logotype-margin-left: 18px;
+$base-header-height: 100px;
+
+/* Mobile overrides */
+$mobile-header-background-size: contain;
+$mobile-header-background-color: white;
+$mobile-header-text-color: $main-brand-color;
+$mobile-header-icons: dark;
+$mobile-header-height: 36%;
+$sitemap-mobile-margin: 8% 0 0 27%;
+
+/* Images */
+$find-us-icon: find;

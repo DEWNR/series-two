@@ -1,0 +1,20 @@
+/* Site-specific variables, referenced by multiple SCSS files. */
+/* Alinytjara Wilurara */
+
+/* File prefix */
+$site-prefix: aw;
+
+/* Colours */
+$main-brand-color: #bf342c;
+$pale-brand-color: #f8ebe6;
+
+/* Layout */
+$header-background-position: right;
+$logotype-width: 208px;
+$logotype-height: 60px;
+$logotype-margin-top: 18px;
+$logotype-margin-left: 18px;
+
+/* Images */
+$header-background-image: url(#{$image-path}#{$site-prefix}-header-background.png);
+$header-background-svg: $header-background-image;

@@ -1,0 +1,193 @@
+/* Variables */
+$regions: amlr aw ep ki ny saal samdb se;
+
+/* Layout */
+
+#header {
+  height: 8em;
+  padding-bottom: 0;
+  background-size: cover;
+  h1 {
+    color: white;
+    text-align: center;
+    margin-top: 1em;
+    background-image: none;
+  }
+}
+
+#main {
+  padding-bottom: 0 !important;
+  background-size: cover;
+  background-position: bottom center;
+	background-repeat: no-repeat;
+  .breakpoint-small & {
+    background-image: none !important;
+  }
+}
+
+#regions {
+  position: relative;
+  overflow: hidden;
+  width: 574px;
+  max-width: 100%;
+  margin: 5em auto 8em auto;
+  .breakpoint-large & {
+    width: 574px/(12.08333333px * 1.15) * 1em;
+  }
+  .breakpoint-small & {
+    margin: 1em 0 0 0;
+  }
+  &>.map {
+    position: relative;
+    float: left;
+    width: 358px;
+    height: 0;
+    padding-bottom: 409px;
+    overflow: hidden;
+    background:url(portal-map-background.png) no-repeat;
+    background-size: 100%;
+    .inlinesvg.scaled & {
+      background-image: url(/assets/images/svg/portal-map-background.svg);
+    }
+    .breakpoint-large & {
+      width: 358px/(12.08333333px * 1.15) * 1em;
+      padding-bottom: 409px/(12.08333333px * 1.15) * 1em;
+    }
+    .breakpoint-small & {
+      background-image: none;
+      display: none;
+    }
+    &>img {
+      position:relative;
+      width: 100%;
+      height: auto;
+      float: left;
+    }
+    &>.region {
+      position:relative;
+      display: none;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 509px;
+      float: left;
+      margin-right: -100%;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      @each $region in $regions {
+        &.#{$region} {
+          background-image: url(portal-map-#{$region}.png);
+          .inlinesvg.scaled & {
+            background-image: url(/assets/images/svg/portal-map-#{$region}.svg);
+          }
+        }
+      }
+    }
+  }
+  &>ul.list {
+    float: left;
+    width: 216px;
+    list-style: none;
+    padding: 0;
+    .breakpoint-large & {
+      width: 216px/(12.08333333px * 1.15) * 1em;
+    }
+    .breakpoint-small & {
+      font-size: 120%;
+      max-width: 100%;
+    }
+    &>li {
+      position: relative;
+      margin: 0 0 0 3.8em;
+      padding: 0;
+      overflow:visible;
+      width: 2px;
+      .breakpoint-large & {
+        width: 0.13em;
+      }
+      a {
+        display: block;
+        margin-left: -3.8em;
+        width: 216px;
+        height: 42px;
+        display: block;
+        overflow:hidden;
+        text-indent: 1280px;
+        white-space: nowrap;  // Ensure the indented text doesn't wrap on to the next line
+        text-transform: capitalize;  // Make the text-indent take effect in IE7
+        color: transparent;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: top left;
+        .breakpoint-large & {
+          width: 216px/(12.08333333px * 1.15) * 1em;
+          height: 42px/(12.08333333px * 1.15) * 1em;
+        }
+        @each $region in $regions {
+          &.#{$region} {
+            background-image: url(portal-logo-#{$region}.png);
+            .inlinesvg.scaled & {
+              background-image: url(/assets/images/svg/portal-logo-#{$region}.svg);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.wrapper.outer {
+  //font-size: 90%;
+  width: 100%;
+  overflow: hidden;
+  background-image: url(portal-rings.png);
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-size: 100%;
+  padding: 3em 0 6em 0;
+  .scaled & {
+    background-image: url(portal-rings@2x.png);
+  }
+  .breakpoint-medium & {
+    background-size: 120%;
+  }
+  .breakpoint-small & {
+    display: none;
+    background-image: none;
+  }
+  &>.wrapper.inner {
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+    .breakpoint-large & {
+      max-width: 850px/(12.08333333px * 1.15) * 1em;
+    }
+    .breakpoint-large & {
+      max-width: 100% - 2 * 1.6%;
+    }
+    h2 {
+      color: black;
+      font-size: 200%;
+      font-weight: bold;
+      margin: 0;
+    }
+    &>.column {
+      width: 49%;
+      .breakpoint-small & {
+        width: auto;
+      }
+      &.first {
+        float: left;
+        width: 39%;
+        font-weight: bold;
+      }
+      &.last {
+        float: right;
+        width: 59%;
+      }
+      a {
+        color: #012954;
+      }
+    }
+  }
+}

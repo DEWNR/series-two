@@ -1,0 +1,448 @@
+/* Provides additional styling for a device with a screen size of 1024dp or less */
+
+/* Variables */
+$margin: 1.6%;
+$padding: 1.6%;
+$min-page-width: 641px; // Including padding, margins
+$header-height: ($base-header-height/980px) * 100%;
+$header-logotype-height: $header-height;
+$sitemap-logotype-height: $header-logotype-height;
+$three-column-module-width: (100% - (4 * $margin))/3;
+$two-column-module-width: (100% - (3 * $margin))/2;
+$content-width: 66.666%;
+$module-width: 33.334%;
+$base-font-scale: 145%;
+
+
+/* CSS */
+
+/* General */
+
+.breakpoint-medium body {
+  padding: 0 0 $padding 0;
+}
+
+/* Reusable elements */
+
+/* Landing page modules */
+.breakpoint-medium .landing .module {
+  width: $three-column-module-width - 2 * $padding;
+  margin-top: $margin;
+  margin-left: $three-column-module-width + 2 * $margin;
+  padding: $padding;
+  &.first {
+    margin-left: $margin;
+  }
+  &.last, &.icon.primary {
+    margin-left: 2 * $three-column-module-width + 3 * $margin;
+  }
+  &.mid {
+    &.list {
+      background-size: auto 3.5em;
+    }
+    &.lg {
+      padding-bottom: $three-column-module-width * 218/282;
+      width: $three-column-module-width;
+    }
+  }
+  &.small {
+    width: $three-column-module-width - 2 * $padding;
+    margin-bottom: $margin;
+    h2, p {
+      margin: 0 0 0 (25% + 3 * $padding);
+    }
+    .overlay {
+      margin-right: 3 * $padding;
+    }
+  }
+  &.icon {
+    margin-bottom: -$padding;
+    float: left;
+    h2 {
+      margin-left: 30%;
+    }
+    &.primary {
+      float: none;
+      height: 0;
+      margin-bottom: 0;
+      padding-bottom: 8.5%; // Manually calculated based on spotlight height; rounded down to prevent overflow
+      &.first {
+        clear: none;
+        margin-top: $margin;
+      }
+      h2 {
+        margin-top: 8%;
+      }
+    }
+    &.first {
+      margin-top: 0;
+      clear: left;
+    }
+  }
+  #iconModule{
+    position: absolute;
+    border:1px solid #ff0000;
+    top:220px;
+  }
+  &.shortIcon {
+    //margin-bottom: -$padding;
+    background-position: -17px center;
+    border-bottom: solid 1px $main-brand-color/2 + $pale-brand-color/2;
+    margin-left: $three-column-module-width + 2 * $margin;
+    float: left;
+    h2 {
+      margin-left: 20%;
+      margin-top: 0.4em !important;
+    }
+    &.primary {
+      float: none;
+      height: 0;
+      margin-bottom: 0;
+      padding-bottom: 8.5%; // Manually calculated based on spotlight height; rounded down to prevent overflow
+      &.first {
+        clear: none; 
+      }
+      h2 {
+        margin-top: 8%;
+      }
+    }
+    &.first {
+      clear: left;
+      margin-top: $margin;
+      border-top: solid 1px $main-brand-color/2 + $pale-brand-color/2;
+      margin-left : $margin;
+    }
+    &.last {
+      border-top: solid 1px $main-brand-color/2 + $pale-brand-color/2;
+      margin-left: 2 * $three-column-module-width + 3 * $margin;
+      //border-bottom: none;
+    }
+  }
+  &.promotion {
+    display: none;
+  }
+}
+
+
+// Homepage feature panel
+.breakpoint-medium #feature{
+  position: relative;
+  bottom: 0px;
+  display:inline-block;
+  width:97%;
+  min-height: 80px;
+  height:75px;
+  clear: both;
+  margin:0px auto -1.6% auto;
+  padding:$padding;
+  color:white;
+  overflow: visible;
+  h2{
+    color:white;
+    margin-top:0px;
+  }
+  a{
+    color:white;
+  }
+  img{
+    width: 18em;
+  }
+  div{
+    width:70%;
+  }
+}
+
+.breakpoint-medium .module.actions {
+  width: 100% - 2*$padding;
+  clear: both;
+  margin: 0;
+  margin-top: $margin;
+  margin-bottom: -$margin;
+  padding: $padding;
+  border: none;
+  background-color: $pale-brand-color;
+  ul {
+    padding: 0;
+    font-size: 120%;
+    a+a {
+      margin-left: 2*$margin;
+    }
+    li {
+      display: inline-block;
+    }
+  }
+}
+
+/* Content page modules */
+.breakpoint-medium .content .module {
+  width: $module-width - 2 * $padding;
+  padding: 0 0 $padding 0;
+  margin: 0 -100% 0 ($content-width + $margin);
+  &.navigation {
+    width: $two-column-module-width - 2 * $padding - 18.7%;
+    height: 10em;
+    padding: $padding $padding $padding ($padding + 18.7%);
+    margin: $margin 0 0 $margin;
+  }
+}
+
+
+/* Specific elements */
+.breakpoint-medium .banner-container {
+  font-size: $base-font-scale;
+  min-width: $min-page-width;
+  .banner {
+    padding-left: $padding;
+    padding-right: $padding;
+    min-width: $min-page-width;
+  }
+}
+
+/* Page container */
+.breakpoint-medium #container {
+  min-width: $min-page-width;
+  font-size: $base-font-scale;
+}
+
+/* Site header */
+.breakpoint-medium #header {
+  padding-bottom: $header-height;
+  h1 {
+    padding-bottom: $header-logotype-height;
+    a {
+      width: $logotype-width/$base-logotype-height * $header-logotype-height;
+      height: 0;
+      padding-bottom: $logotype-height/$base-logotype-height * $header-logotype-height;
+      margin: ($logotype-margin-top/$base-logotype-height * $header-logotype-height) 0 0 ($logotype-margin-top/$base-logotype-height * $header-logotype-height);
+      & img {width:100%;
+      height:100%;
+      }    
+    }
+  }
+}
+
+/* Main navigation menu and search bar */
+.breakpoint-medium #menu {
+  form {
+    input[type=text] {
+      display: none;
+    }
+    input[type=submit] {
+      background-image: url(/files/0/511/regional-search-button.png);
+    }
+  }
+}
+
+.breakpoint-medium.scaled.inlinesvg #menu {
+  form {
+    input[type=submit] {
+      background-image: url(/assets/images/svg/regional-search-button.svg);
+    }
+  }
+}
+
+/* The page's dynamic content */
+.breakpoint-medium #main {
+  padding-bottom: $margin;
+  &.content {
+    padding-bottom: 3 * $margin;
+  }
+}
+
+/* Spotlight and "I want to" modules */
+.breakpoint-medium {
+  #spotlight, #i-want-to {
+    padding-bottom:30.6091954022988505747126436781611%;
+  }
+  #spotlight {
+    width: 2 * $three-column-module-width + $margin;
+    margin-left: $margin;
+    &.wide {
+      margin: 0.5*$padding 0 0 0;
+      width: 100%;
+      h2, p, ol {
+        margin: $padding $padding $padding 2*$padding;
+      }
+      h2 {
+        margin-top: 6*$padding;
+        width: 25%;
+      }
+      p {
+        width: 30%;
+      }
+      .item .overlay {  // The background images for the wide spotlight
+        width: 45%;
+        &.right {  // The user-defined spotlight background image
+          @include border-bottom-right-radius(0);
+          width: 88%;
+        }
+      } 
+    }
+    h2, p {
+      width: 40%;
+      margin: $padding * 3/2;
+      margin-right: -100%;
+    }
+    h2 {
+      font-size: 215%;
+    }
+    p {
+      font-size: 120%;
+      line-height: 120%;
+    }
+    ol {
+      margin: $padding * 3/2;
+    }
+    .item {
+      .overlay {
+        &.left {
+          background-position: right;
+        }
+        &.right {
+          @include border-bottom-right-radius((309/430) * 10% 10%);
+        }
+      }
+    }
+  }
+  #i-want-to {
+    width: $three-column-module-width;
+    margin-left: 2 * $three-column-module-width + 3 * $margin;
+    float: left; // !important;
+    position: relative;
+    //margin-left: 2 * $three-column-module-width + 3 * $margin;
+    &.short{
+      background-color: #e3eae6;
+    }
+    &.secondary {  // TODO check to see if this is still required, or superceded by .short
+      width: 100%;
+      margin-left: 0;
+    }
+    ul {
+      li {
+        margin-bottom: 0.4em;
+      }
+      .columns{
+         display: block;
+         width: 30.5%;
+         float: left;
+      }
+    }
+  }
+}
+
+.breakpoint-medium.touch #spotlight li {
+  margin-right: 1.2em;
+  width: 1.2em;
+  height: 1.2em;
+  background-color: transparent;
+  a {
+    border: solid 0.12em transparent;
+    height: 0.9em;
+    width: 0.9em;
+  }
+}
+
+
+/* Secondary navigation, breadcrumbs and general page content */
+.breakpoint-medium {
+  #navigation, #breadcrumbs, #content {
+    float: left;
+    clear: left;
+    width: $content-width - 1 * $padding;
+    margin: $padding -100% $padding $padding;
+    padding: 0;
+    border: none;
+  }
+  #navigation {
+    position: relative;
+    display: none;
+    border-style: solid;
+    border-color: $main-brand-color/2 + $pale-brand-color/2;
+    border-width: 1px 0;
+  }
+  #breadcrumbs {
+    margin-bottom: 0;
+    #navigation-toggle {
+      display: block;
+    }
+  }
+  .blank, .no-modules {
+    #navigation, #breadcrumbs, #content {
+      width: 100% - 2*$padding;
+      margin: $padding $padding 0 $padding;
+    }
+  }
+}
+
+/* The container for large interactive Google Maps */
+.breakpoint-medium #map-container {
+  #map {
+    width: ($content-width - $padding)/(100% - 2*$padding)*100%;
+    height: 30em;
+    margin: 0 0 0 $padding/(100% - 2*$padding)*100%;
+  }
+}
+
+
+/* Bottom of page "sitemap" */
+.breakpoint-medium #sitemap {
+  .logotype {
+    padding-bottom: $sitemap-logotype-height;
+    a {
+      width: $logotype-width/$base-logotype-height * $sitemap-logotype-height;
+      height: 0;
+      padding-bottom: $logotype-height/$base-logotype-height * $sitemap-logotype-height;
+      margin: ($logotype-margin-top/$base-logotype-height * $sitemap-logotype-height) 0 0 ($logotype-margin-top/$base-logotype-height * $sitemap-logotype-height);
+    }
+  }
+  .wrapper {
+    min-height: 10em;
+    &>ul {
+      &>li {
+        display: none;
+        &.important, &.very-important {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+/* Site footer, including government logos and disclaimers */
+.breakpoint-medium #footer {
+  .disclaimer {
+    @include background-size(auto);
+    position: relative;
+    overflow: hidden;
+    background-color: 3 * ($main-brand-color/4) + $pale-brand-color/4;
+    background-image: url(/files/0/511/regional-menu-shadow.png);
+    background-repeat: repeat-x;
+    p {
+      margin: 0.87em 2.5em;
+    }
+  }
+}
+
+.breakpoint-medium.multiplebgs #footer {
+  .logos, .spacer {
+    @include background-size(auto 100%);
+  }
+  .logos {
+    @include background-size(auto 100%);
+    background-image: url(#{$site-prefix}-footer-background-left.png);
+    background-position: left;
+  }
+  .spacer {
+    background-image: url(#{$site-prefix}-footer-background-right.png);
+    background-position: right;
+  }
+}
+
+.breakpoint-medium.scaled.inlinesvg.multiplebgs #footer {
+  .logos {
+    background-image: url(/assets/images/svg/#{$site-prefix}-footer-background-left.svg);
+  }
+  .spacer {
+    background-image: url(/assets/images/svg/#{$site-prefix}-footer-background-right.svg);
+  }
+}

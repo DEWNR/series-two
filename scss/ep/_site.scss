@@ -1,0 +1,20 @@
+/* Site-specific variables, referenced by multiple SCSS files. */
+/* Eyre Peninsula */
+
+/* File prefix */
+$site-prefix: ep;
+
+/* Colours */
+$main-brand-color: #6ba2b9;
+$pale-brand-color: #e3ecf0;
+
+/* Layout */
+$header-background-position: right;
+$logotype-width: 250px;
+$logotype-height: 60px;
+$logotype-margin-top: 28px;
+$logotype-margin-left: 40px;
+
+/* Images */
+$header-background-image: url(#{$image-path}#{$site-prefix}-header-background.png);
+$header-background-svg: $header-background-image;

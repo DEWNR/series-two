@@ -1,0 +1,20 @@
+/* Site-specific variables, referenced by multiple SCSS files. */
+/* South East */
+
+/* File prefix */
+$site-prefix: se;
+
+/* Colours */
+$main-brand-color: #73a950;
+$pale-brand-color: #e4edda;
+
+/* Layout */
+$header-background-position: right;
+$logotype-width: 208px;
+$logotype-height: 60px;
+$logotype-margin-top: 18px;
+$logotype-margin-left: 18px;
+
+/* Images */
+$header-background-image: url(#{$image-path}#{$site-prefix}-header-background.png);
+$header-background-svg: $header-background-image;

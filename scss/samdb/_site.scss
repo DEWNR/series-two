@@ -1,0 +1,20 @@
+/* Site-specific variables, referenced by multiple SCSS files. */
+/* SA Murray-Darling Basin */
+
+/* Regional file prefix */
+$site-prefix: samdb;
+
+/* Colours */
+$main-brand-color: #0084c5;
+$pale-brand-color: #e6eff9;
+
+/* Layout */
+$header-background-position: right;
+$logotype-width: 208px;
+$logotype-height: 60px;
+$logotype-margin-top: 18px;
+$logotype-margin-left: 18px;
+
+/* Images */
+$header-background-image: url(#{$image-path}#{$site-prefix}-header-background.png);
+$header-background-svg: $header-background-image;

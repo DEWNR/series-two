@@ -1,0 +1,22 @@
+/* Site-specific variables, referenced by multiple SCSS files. */
+/* State Flora */
+
+/* File prefix */
+$site-prefix: sf;
+
+/* Colours */
+$main-brand-color: #a93439;
+$pale-brand-color: #ebc1bd;
+$mid-brand-color: #b44e51;
+$dark-brand-color: #752d31;
+$header-background-color: #a71e38;
+
+/* Layout */
+$logotype-width: 330px;
+$logotype-height: 120px;
+$logotype-margin-top: 0px;
+$logotype-margin-left: 0px;
+
+/* Images */
+$sitemap-background-svg: url(#{$image-path}#{$site-prefix}-sitemap-overlay.png);  // Use the PNG image even when the browser supports SVGs as we don't have this in SVG format
+$header-reverse-logotype-svg: url(#{$image-path}#{$site-prefix}-logotype-reverse.png);  // Use the PNG until we fix the SVG

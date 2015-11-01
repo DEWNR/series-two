@@ -1,0 +1,23 @@
+/* Site-specific variables, referenced by multiple SCSS files. */
+/* Marine parks */
+
+/* File prefix */
+$site-prefix: mp;
+
+/* Colours */
+$main-brand-color: #394f8f;
+$pale-brand-color: #d7dce9;
+
+/* Layout */
+$header-background-position: center;
+$logotype-width: 295px;
+$logotype-height: 72px;
+$logotype-margin-top: 23px;
+$logotype-margin-left: 31px;
+$sitemap-mobile-margin: 6.5% 0 0 12%;
+
+/* Images */
+$header-background-image: url(#{$image-path}#{$site-prefix}-header-background.png);
+$header-background-svg: $header-background-image;
+$sitemap-background-image: url(#{$shared-image-path}dewnr-sitemap-overlay.png);
+$sitemap-background-svg: $sitemap-background-image;

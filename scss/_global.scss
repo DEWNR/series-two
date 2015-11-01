@@ -1,0 +1,10 @@
+/* Global variables and dependencies, referenced by multiple SCSS files. */
+
+/* Compass functions */
+@import "compass/css3";
+
+/* File paths */
+$image-path: "";
+$shared-image-path: "/files/0/511/";
+$svg-path: "/assets/images/svg/";
+$shared-svg-path: $svg-path;

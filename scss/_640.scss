@@ -1,0 +1,509 @@
+/* Provides additional styling for a device with a screen size of 640dp or less */
+
+/* Variables */
+$margin: 2.5%;
+$padding: 2.5%;
+$min-page-width: 320px; // Including padding, margins
+$header-height: if($mobile-header-height, $mobile-header-height, (($base-header-height/320px) * 100%));
+$header-logotype-height: $header-height;
+$sitemap-logotype-height: $header-logotype-height;
+$base-font-scale: 300%;
+
+/* CSS */
+
+/* General */
+
+.breakpoint-small body {
+  padding: 0;
+}
+
+.breakpoint-small h1 {
+  font-size: 250%;
+}
+
+
+/* Utilities */
+
+.breakpoint-small .no-mobile {
+  display: none;
+}
+
+.breakpoint-small .mobile-only {
+  display: block;
+}
+
+
+/* Reusable elements */
+
+/* All modules */
+/* Use an extend-only select to define the standard module properties */
+%module-reset {
+  position: relative;
+  width: auto;
+  height: auto;
+  float: none;
+  margin: 0 $margin;
+  padding: 0;
+  border: none;
+  border-bottom: solid 1px $main-brand-color/2 + $pale-brand-color/2;
+  background-color: transparent;
+  background-image: none !important;
+  h1, h2, h3 {
+    line-height: 115%;
+    margin-left: 0;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    padding: 0;
+  }
+  h2 {
+    position: relative;
+    font-family: inherit;
+    font-size: 160%;
+    font-weight: normal;
+  }
+}
+
+/* Apply the module reset to all modules */
+.breakpoint-small {
+  .landing {
+    .module {
+      @extend %module-reset;
+      &.icon, &.mid, &.small {
+        @extend %module-reset;
+        &.first, &.last, &.primary, &.secondary, &.lg, &.extra-space {
+          @extend %module-reset;
+          &.first {
+            @extend %module-reset;
+          }
+        }
+        .overlay {
+          display: none !important;
+        }
+      }
+      &.small .overlay {
+        background-image: none;
+      }
+    }
+  }
+  .content {
+    .module {
+      @extend %module-reset;
+      &.navigation {
+        @extend %module-reset;
+        &.first, &.last, &.primary, &.secondary {
+          @extend %module-reset;
+          &.first {
+            @extend %module-reset;
+          }
+        }
+      }
+    }
+  }
+  .landing .module.lg{
+    @extend %module-reset;
+    h2{
+      background-image: none !important;
+      background-color: transparent !important;
+      color: inherit;
+    } 
+  }
+}
+
+.breakpoint-small .module.actions {
+  display: none;
+}
+
+/* Landing nad content page modules */
+.breakpoint-small {
+  .landing, .content {
+    .module {
+      p {
+        display: none;
+      }
+      &.list {
+        ul {
+          display: none;
+        }
+      }
+    }
+  }
+  .content .module {
+    padding-bottom: $padding;
+  }
+}
+
+/* Page banners */
+.breakpoint-small .banner-container {
+  @include box-shadow(none);
+  min-width: $min-page-width;
+  font-size: $base-font-scale;
+  .banner {
+    padding: $padding;
+    min-width: $min-page-width;
+  }
+}
+
+
+/* Specific elements */
+
+/* Page container */
+.breakpoint-small #container {
+  min-width: $min-page-width;
+  padding: 0;
+  background-image: none;
+  font-size: $base-font-scale;
+}
+
+/* Site header */
+.breakpoint-small #header {
+  @if $mobile-header-background-color != $header-background-color {
+    background-color: $mobile-header-background-color;
+  }
+  padding-bottom: $header-height;
+  h1 {
+    padding-bottom: $header-logotype-height;
+    @include background-size($mobile-header-background-size);
+    a {
+      width: $logotype-width/$base-logotype-height * $header-logotype-height * 0.8;
+      height: 0;
+      padding-bottom: $logotype-height/$base-logotype-height * $header-logotype-height * 0.8;
+      margin: ($logotype-margin-top/$base-logotype-height * $header-logotype-height * 0.8) 0 0 ($logotype-margin-top/$base-logotype-height * $header-logotype-height * 0.8);
+    }
+  }
+  ul {
+    font-size: 85%;
+    @if $mobile-header-text-color != $header-text-color {
+      li {
+        color: $mobile-header-text-color;
+        a {
+          color: $mobile-header-text-color;
+        }
+      }
+    }
+  }
+  &.movable{
+    top:2.4em;
+    height:1.2em;
+    background-color: #fff;
+    & img{
+      width:100%;
+      height:100%;
+      }  
+  }
+}
+
+@mixin social-icons($type: png, $path: null) {
+  @each $channel in facebook, twitter, youtube, instagram {
+    &.#{$channel} {
+      background-image: url(#{$path}#{$site-prefix}-#{$channel}-dark.#{$type});
+    }
+  }
+}
+
+@if $mobile-header-icons == dark {
+  #header ul li a {
+    .breakpoint-small &.icon {
+      @include social-icons;
+    }
+    .breakpoint-small.scaled.inlinesvg &.icon {
+      @include social-icons(svg, $svg-path);
+    }
+  }
+}
+
+/* Main navigation menu and search bar */
+.breakpoint-small {
+  #menu {
+    ul {
+      @include box-shadow(0 1em 1em rgba(0,0,0,0.3));
+      display: none;
+      overflow: hidden;
+      background-color: $pale-brand-color;
+      li {
+        float: none;
+        margin: 0 $padding 0 $padding;
+        border-width: 0 0 1px 0;
+        a {
+          color: $main-brand-color;
+        }
+        &.last {
+          border-width: 0;
+        }
+      }
+      .dropdown-container {
+        display: none;
+      }
+    }
+    &.movable{
+      position:absolute;
+      top:0px;
+    }
+  }
+  #menu-toggle {
+    @include background-size(100% 100%);
+    display: block;
+    position: relative;
+    height: 3em;
+    width: 4.6em;
+    background-image: url(/files/0/511/regional-menu-button.png);
+    background-repeat: no-repeat;
+    z-index: 1;
+    &.active {
+      background-image: url(#{$site-prefix}-menu-button-active.png);
+    }
+  }
+}
+
+.breakpoint-small.scaled.inlinesvg {
+  #menu-toggle {
+    background-image: url(/assets/images/svg/regional-menu-button.svg);
+    &.active {
+      background-image: url(/assets/images/svg/#{$site-prefix}-menu-button-active.svg);
+    }
+  }
+}
+
+/* The page's dynamic content */
+.breakpoint-small {
+  #main, #main.content {
+    padding-bottom: 2 * $margin;
+  }
+}
+
+/* Spotlight modules */
+.breakpoint-small #spotlight, .breakpoint-small #spotlight.wide {
+  width: auto;
+  height: auto;
+  float: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-bottom: solid 1px $main-brand-color/2 + $pale-brand-color/2;
+  h2, p {
+    display: block;
+    width: auto;
+    margin-left: $margin;
+    margin-right: $margin;
+  }
+  h2 {
+    position: absolute;
+    top: 0;
+    font-size:220%;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+  p {
+    position: relative;
+    font-size:120%;
+    height: 5.5em;
+    margin-bottom: 0;
+    //
+  }
+  ol {
+    position: absolute;
+    bottom: 7.25em;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+  .item {
+    position: relative;
+    float: left;
+    margin-right: -100%;
+    background-color: mix($main-brand-color, white, 10%);
+    .overlay {
+      &.left {
+        background-image: none;
+        display: none;
+      }
+      &.right {
+        @include border-radius(0);
+        display: block;
+        width: 100%;
+        height: 0;
+        position: relative;
+        margin: 6.5em 0 3em 0;
+        padding-bottom: 50%;
+      }
+    }
+  }
+}
+
+.breakpoint-small.touch #spotlight li {
+  margin-right: 1.6em;
+  width: 1em;
+  height: 1em;
+  background-color: transparent;
+  a {
+    border: solid 0.15em transparent;
+    height: 0.65em;
+    width: 0.65em;
+  }
+}
+
+
+/* "I want to" module */
+.breakpoint-small #i-want-to {
+  @extend %module-reset;
+}
+.breakpoint-small #i-want-to.short {
+  display:none;
+}
+/* Feature module */
+.breakpoint-small #feature {
+  display:none;
+}
+
+
+/* Secondary navigation, breadcrumbs and general page content */
+.breakpoint-small {
+  #breadcrumbs, #content {
+    p {
+      display: block;
+    }
+  }
+  #navigation {
+    @extend %module-reset;
+    border-top: solid 1px $main-brand-color/2 + $pale-brand-color/2;
+  }
+  #breadcrumbs {
+    @extend %module-reset;
+    margin: $margin;
+    border-bottom: none;
+  }
+  #content {
+    @extend %module-reset;
+    img {
+      &.species {
+        width: 128px;
+        padding: 0;
+        margin-left: auto;
+        display: block;
+        margin-right: auto;
+        text-align: center;
+      }
+      &.campsite {
+        display: none;
+      }
+    }
+    .species, .campsite {
+      float: none;
+      width: 100%;
+    }
+    .closure-announcement {
+      h2 {
+        margin-top: 0;
+      }
+    }
+  }
+  #find-us, #catalogue, #orders {
+    @extend %module-reset;
+  }
+  .blank, .no-modules {
+    #navigation, #breadcrumbs, #content {
+      width: 100% - 2*$padding;
+      margin: $padding $padding 0 $padding;
+    }
+  }
+}
+
+/* Bottom of page "sitemap" */
+.breakpoint-small #sitemap {
+  padding-bottom: $padding;
+  .logotype {
+    position: relative;
+    margin-bottom: -15%; // Manually calculated to account for white space at bottom of logotype
+    padding-bottom: $sitemap-logotype-height;
+    a{
+      width: $logotype-width/$base-logotype-height * $sitemap-logotype-height;
+      height: 0;
+      padding-bottom: $logotype-height/$base-logotype-height * $sitemap-logotype-height;
+      margin: ($logotype-margin-top/$base-logotype-height * $sitemap-logotype-height) 0 0 ($logotype-margin-top/$base-logotype-height * $sitemap-logotype-height);
+    }
+  }
+  .wrapper {
+    float: none;
+    margin: $sitemap-mobile-margin;
+    &>ul {
+      &>li {
+        margin: 0;
+        padding: 0;
+        border-width: 0;
+        &.important {
+          display: none;
+        }
+        &.very-important {
+          display: block;
+          margin-bottom: 1em;
+        }
+      }
+    }
+  }
+}
+
+/* Site footer, including government logos and disclaimers */
+.breakpoint-small #footer {
+  p {
+    &.switch {
+      position: relative;
+      margin: 1em;
+      font-size: 100%;
+      text-align: center;
+    }
+  }
+  .logos {
+    float: none;
+    background-image: none;
+    background-color: $main-brand-color;
+    width: 100%;
+    height: 6.55em;
+    text-align: center;
+    a {
+      display: inline-block;
+      float: none;
+      margin-left: 1.55em;
+      &:first-child {
+        margin: 0;
+      }
+      &.gosa {
+        width: 87px/92px * 6.55em;
+        background-image: url(/files/0/511/regional-footer-gosa-vertical.png);
+      }
+      &.south-australia {
+        width:66px/92px * 6.55em;
+        background-image: url(/files/0/511/regional-footer-south-australia-vertical.png);
+      }
+      &.sagovau {
+        width:54px/92px * 6.55em;
+        background-image: url(/files/0/511/regional-footer-sagovau-vertical.png);
+      }
+    }
+  }
+  .spacer {
+    background-image: none;
+    display: none;
+  }
+}
+
+.breakpoint-small.scaled.inlinesvg #footer .logos a {
+  &.gosa {
+    width: 87px/92px * 6.55em;
+    background-image: url(/assets/images/svg/regional-footer-gosa-vertical.svg);
+  }
+  &.south-australia {
+    width:66px/92px * 6.55em;
+    background-image: url(/assets/images/svg/regional-footer-south-australia-vertical.svg);
+  }
+  &.sagovau {
+    width:54px/92px * 6.55em;
+    background-image: url(/assets/images/svg/regional-footer-sagovau-vertical.svg);
+  }
+}
+
+.breakpoint-small.multiplebgs #footer .logos {
+  background-image: none;
+}
+
+.breakpoint-small.scaled.inlinesvg.multiplebgs #footer .logos {
+  background-image: none;
+}

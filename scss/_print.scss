@@ -1,0 +1,72 @@
+body {
+  font-family: "Frutiger 45 Light", "Frutiger Light", Frutiger, "Segoe UI", Helvetica, Arial, sans-serif;
+  color: black;
+}
+
+img {
+  border: none;
+}
+
+.print-only {
+  display: block;
+}
+
+.svg {
+  display: none;
+}
+
+.inlinesvg {
+  .no-svg {
+    display: none;
+  }
+  .svg {
+    display: block;
+  }
+}
+
+#header {
+  img, ul, ol {
+    display: none;
+  }
+  .generatedcontent & {
+    content: url(#{$site-prefix}-logotype-print.png);
+    a {
+      display: none;
+    }
+  }
+  .generatedcontent.inlinesvg & {
+    content: url(/assets/images/svg/#{$site-prefix}-logotype-print.svg);
+  }
+}
+
+#menu, #navigation, #sitemap, #footer, #location, #find-us, #spotlight .item.active, #spotlight ol {
+  display: none !important;
+}
+
+#spotlight {
+  .item {
+    &.active, &.inactive {
+      display: none !important;
+    }
+    &.template {
+      display: block;
+    }
+  }
+}
+
+#content {
+  table, td, th {
+    border-style: solid;
+    border-width: 1pt;
+    border-color: black;
+    border-collapse: collapse;
+    padding: 0.5em;
+  }
+  th {
+    font-weight: bold;
+  }
+}
+
+.module {
+  background: none !important;
+}

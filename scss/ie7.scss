@@ -1,0 +1,89 @@
+.ie7-fix {
+  display: block;
+  clear: both;
+}
+
+.screen-reader-text {
+  text-transform: capitalize;  // Make the text-indent take effect
+}
+
+.module {
+  display: inline-block;
+  &.icon {
+    position: absolute;
+    right: 1%;
+  }
+  &.mid {
+    &.list {
+      h2 {
+        padding-top: 0;  // Override the padding added to all other mid-sized module headers
+      }
+    }
+    h2 {
+      padding-top: 12px;  // Add 12px of padding the header to compensate for the padding the IE7 ignores on the module
+    }
+  }
+  &.icon {
+    top: 372px;
+    & h2 {
+      padding-top: 12px;
+    }
+    &.primary {
+      top: 85px;
+      &.first {
+        margin-top: 0;
+        top: 12px;
+      }
+      &.last {
+        top: 158px;
+      }
+    }
+    &.secondary {
+      top: 304px;
+      &.first {
+        top: 231px;
+      }
+      &.last {
+        top: 377px;
+      }
+    }
+    &.first {
+      top: 287px;
+    }
+    &.last {
+      top: 445px;
+    }
+  }
+  .landing &.promotion {
+    min-height: 120px;  // Remove 20px from min-height to compensate for margin bug
+  }
+}
+
+#menu form input[type=submit] {
+  position: absolute;
+  right: 0;
+}
+
+#spotlight {
+  h2 {
+    margin-top: 0;
+    padding-top: 12px;
+  }
+  ol {
+    li {
+      display: block;
+      float: left;
+    }
+  }
+}
+
+#breadcrumbs, #content {
+  margin: 12px 296px 12px 0px;
+  .no-modules>& {
+    margin: 12px 12px 12px 0px;
+  }
+}
+
+#content {
+  margin-left: -890px;
+}

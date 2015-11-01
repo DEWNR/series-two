@@ -1,0 +1,17 @@
+/* Site-specific variables, referenced by multiple SCSS files. */
+/* NRM Portal */
+
+/* File prefix */
+$site-prefix: portal;
+
+/* Colours */
+$main-brand-color: #9e958d;
+$pale-brand-color: $main-brand-color*0.2 + white*0.8;
+$header-background-color: #012954;
+
+/* Layout */
+$header-background-position: center;
+
+/* Images */
+$header-background-image: url(#{$image-path}#{$site-prefix}-header-background.png);
+$header-background-svg: $header-background-image;

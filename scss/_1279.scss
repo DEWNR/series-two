@@ -1,0 +1,414 @@
+/* Provides site's basic responsive styling for a device with a screen size of less than 1280dp */
+
+/* Variables */
+$margin: 1%;
+$padding: 1%;
+$max-page-width: 1210px; // Including padding, margins
+$min-page-width: 1025px; // Including padding, margins
+$header-height: ($base-header-height/1186px) * 100%;
+$header-logotype-height: $header-height;
+$sitemap-logotype-height: $header-logotype-height;
+$menu-width: 32em;
+$spotlight-height: (275px/870px) * 100%;
+$four-column-module-width: (100% - (5 * $margin))/4;
+$three-column-module-width: (100% - (4 * $margin))/3;
+$content-width: 50%;
+$side-nav-width: 25%;
+$module-width: 25%;
+
+/* CSS */
+
+/* General */
+
+.breakpoint-large body {
+  margin: 0;
+  padding: 0 0 $padding 0;
+}
+
+
+/* Reusable elements */
+
+/* Expanding lists */
+.breakpoint-large a.concertina {
+  @include background-size(auto 100%);
+  width: 0.87em;
+  height: 0.87em;
+  margin-right: 0.5em;
+}
+
+/* Toggle for expanding lists */
+.breakpoint-large.js ul.concertina a.concertina {
+  @include background-size(auto 0.87em);
+}
+
+/* In-content drop-down menus */
+.breakpoint-large .tab {
+  ul {
+    li {
+      a {
+        @include background-size(auto 0.87em);
+      }
+    }
+  }
+}
+
+/* General navigation menu */
+.breakpoint-large .menu-bar {
+  a {
+    padding:1em;
+  }
+  &>li>a {
+      padding-bottom: 2em;
+  }
+}
+
+/* Landing page modules */
+.breakpoint-large .landing .module {
+  width: $four-column-module-width - 2 * $padding;
+  margin-left: $four-column-module-width + 2 * $margin;
+  margin-right: -100%;
+  margin-top: $margin;
+  padding: $padding;
+  &.first {
+    margin-left: $margin;
+  }
+  &.last {
+    margin-left: 2* $four-column-module-width + 3 * $margin;
+  }
+  &.mid, &.small {
+    &.last {
+        margin-right: $margin;
+    }
+  }
+  &.mid {
+    height: 0;
+    padding-bottom: 15.1em;
+    &.list {
+      @include background-size(auto 3.1em);
+      h2 {
+        margin-top: auto;
+      }
+    }
+    &.lg {
+      padding-bottom: $four-column-module-width * 218/282;
+      width: $four-column-module-width;
+    }
+    h2 {
+      margin-top: 35%;
+    }
+  }
+  &.small {
+    width: $four-column-module-width - 2 * $padding;
+    &.extra-space {
+      margin-top: 2*$margin;
+    }
+    h2, p {
+      margin: 0 0 0 (25% + 4 * $padding);
+    }
+    .overlay {
+      width: 25%;
+      margin-right: 4 * $padding;
+      height: 0;
+      padding-bottom: 25%;
+    }
+  }
+  &.icon {
+    @include background-size(auto 88%);
+    margin-top: 0;
+    &.primary {
+      margin-left: 3* $four-column-module-width + 4 * $margin;
+    }
+    &.first {
+      margin-top: $margin;
+    }
+  }
+  &.shortIcon{
+    height:2.3em;
+    float:none;
+    margin-left:75%;
+  }
+  &.promotion {
+    width: $four-column-module-width - 2 * $padding + $margin;  // Incorporate the right-hand margin into the width so the image is flush with the container
+    height: auto;
+    min-height: 10em;
+    margin-right: 0;
+    padding-bottom: 0;
+    .profile {
+      height: 0;
+      padding-top: 47.733%;  // Manually calculated to correspond to 140px on a 1280px screen
+    }
+  }
+}
+
+/* "While you are here" listing */
+.breakpoint-large .module.actions {
+  width: $four-column-module-width - 2*$padding;
+  margin: 0;
+  padding: $padding $padding 0 $padding;
+  h2 {
+    margin: 0 0 $margin 0;
+  }
+  ul {
+    li {
+      @include background-size(auto 0.87em);
+    }
+  }
+}
+
+.breakpoint-large #feature {
+  top: 0;
+  margin-top: (275/1186) * 100% + 1.5*$padding;  // 24.68718%;
+  padding-top: 0;
+  padding-bottom: 27.85%;
+  height: 0;
+  min-height: 0;
+  img {
+    width: 20em;
+  }
+}
+
+/* Content page modules */
+.breakpoint-large .content .module {
+  width: $module-width - 2 * $padding;
+  padding: 0 0 $padding 0;
+  margin: 0 -100% 0 ($side-nav-width + $content-width + $padding);
+  &.navigation {
+    @include background-size(auto 100%);
+    width: $three-column-module-width - 2 * $padding - 12.91%;
+    height: 10em;
+    padding: $padding $padding $padding ($padding + 12.91%);
+    margin: $margin -100% 0 $margin;
+  }
+  a.toggle {
+    bottom: 0.87em;
+    display: block;
+    width: 0.87em;
+    height: 0.87em;
+  }
+}
+
+/* Campground and native species formatting */
+.breakpoint-large {
+  .species, .campsite {
+    width: 75% - 2 * $padding;
+  }
+  img.species, img.campsite {
+    padding-right: 2 * $padding;
+    width: 25%;
+  }
+}
+
+/* Page banners */
+.breakpoint-large .banner-container {
+  width:100%;
+  min-width: $min-page-width;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;  /* Firefox */
+      box-sizing: border-box;
+  .banner {
+    padding: $padding 0.894em; // Left/right padding set to match #container shadow
+    width:100%;
+    max-width: $max-page-width;
+    min-width: $min-page-width;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+      -moz-box-sizing: border-box;  /* Firefox */
+        box-sizing: border-box;
+  }
+}
+
+
+/* Specific elements */
+
+/* Page container */
+.breakpoint-large #container {
+  width:100%;
+  max-width: $max-page-width;
+  min-width: $min-page-width;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;  /* Firefox */
+      box-sizing: border-box;
+  padding: 0 0.894em 0.894em 0.894em;
+}
+
+.breakpoint-large.multiplebgs #container {
+  @include background-size(auto 4.894em, auto 4.894em, 1.79em 100%, 1.79em 100%);
+}
+
+/* Site header */
+.breakpoint-large #header {
+  height: 0;
+  padding-bottom: $header-height;
+  h1 {
+    height: 0;
+    padding-bottom: $header-logotype-height;
+    a {
+      width: $logotype-width/$base-logotype-height * $header-logotype-height;
+      height: 0;
+      padding-bottom: $logotype-height/$base-logotype-height * $header-logotype-height;
+      margin: ($logotype-margin-top/$base-logotype-height * $header-logotype-height) 0 0 ($logotype-margin-top/$base-logotype-height * $header-logotype-height);
+    }
+  }
+  ul {
+    li {
+      a.icon {
+        background-size: contain;
+      }
+    }
+  }
+}
+
+/* Main navigation menu and search bar */
+.breakpoint-large #menu {
+  height: 3em;
+  form {
+    input[type=text] {
+      height: 3em;
+      padding: 0 1em;  
+    }
+    input[type=submit] {
+      @include background-size(100%);
+      width: 3em;
+      height: 3em;
+    }
+  }
+}
+
+/* The page's dynamic content */
+.breakpoint-large #main {
+  &.content {
+    padding-bottom: 3 * $margin;
+  }
+}
+
+/* Spotlight and "I want to" modules */
+.breakpoint-large {
+  #spotlight, #i-want-to {
+    height:0;
+    padding-top: 0;
+    padding-bottom:(275/1186) * 100%;
+  }
+  #spotlight {
+    width: 3 * $four-column-module-width + 2 * $margin;
+    margin-left: $margin;
+    margin-right: -100%;
+    &.wide {
+      width: 100%;
+      margin: 0.5*$padding 0 0 0;
+      h2, p, ol {
+        margin-left: 2*$padding;
+      }
+      h2 {
+        margin-top: 6*$padding;
+      }
+      .item .overlay {  // The background images for the wide spotlight
+        height: 100%;
+        width: 1000/1186 * 100%;
+      }
+    }
+    ol {
+      margin: $padding * 3/4;
+    }
+    .item {
+      .overlay {
+        height: 100%;
+        width: 66.666%;
+        &.left {
+          background-image: url(#{$site-prefix}-spotlight-overlay.png);
+        }
+      }
+    }
+  }
+  #i-want-to {
+    width: $four-column-module-width;
+    margin-left: 3* $four-column-module-width + 4 * $margin;
+    ul {
+      li {
+        @include background-size(auto 0.87em);
+      }
+    }
+  }
+}
+
+/* Breadcrumbs and general page content */
+.breakpoint-large {
+  #breadcrumbs, #content {
+    width: $content-width;
+    padding: 0;
+    margin: $padding $module-width $padding -100%;
+  }
+  .blank {
+    #breadcrumbs, #content {
+      width: 100% - 2*$padding;
+      margin: $padding $padding 0 $padding;
+    }
+  }
+  .no-modules {
+    #breadcrumbs, #content {
+      width: $content-width + $padding + $module-width;
+      margin-right: $padding;
+    }
+  }
+  #breadcrumbs {
+    margin-bottom: 0;
+  }
+}
+
+/* Secondary navigation menu */
+.breakpoint-large #navigation {
+  width: $side-nav-width - 2 * $padding;
+  padding: $padding;
+  ul {
+    li {
+      @include background-size(auto 0.87em);
+    }
+  }
+}
+
+/* The container for large interactive Google Maps */
+.breakpoint-large #map-container {
+  width: 100%;
+  #map {
+    width: ($content-width + $module-width - $padding)/(100% - 2*$padding)*100%;
+    margin: 0 0 0 $padding/(100% - 2*$padding)*100%;
+  }
+}
+
+/* Bottom of page "sitemap" */
+.breakpoint-large #sitemap {
+  width: 100%;
+  .logotype {
+    height: 0;
+    padding-bottom: $sitemap-logotype-height;
+    a {
+      width: $logotype-width/$base-logotype-height * $sitemap-logotype-height;
+      height: 0;
+      padding-bottom: $logotype-height/$base-logotype-height * $sitemap-logotype-height;
+      margin: ($logotype-margin-top/$base-logotype-height * $sitemap-logotype-height) 0 0 ($logotype-margin-top/$base-logotype-height * $sitemap-logotype-height);
+    }
+  }
+  .wrapper {
+    margin: 3% 3% 0 0;
+    min-height: 13em;
+  }
+}
+
+/* Site footer, including government logos and disclaimers */
+.breakpoint-large #footer {
+  .logos, .spacer {
+    height: 4em;
+  }
+  .logos {
+    width: 45em;
+    a {
+      &.gosa {
+        width: 132px/55px * 4em;
+      }
+      &.south-australia {
+        width: 123px/55px * 4em;
+      }
+      &.sagovau {
+        width: 120px/55px * 4em;
+      }
+    }
+  }
+}

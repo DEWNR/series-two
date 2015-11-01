@@ -1,0 +1,116 @@
+/* Provides the majority of code for the style.css file, which provides basic styling for the site */
+
+/* Variables */
+$margin: 12px;
+$padding: 12px;
+
+
+/* CSS */
+
+/* Colours */
+body {
+  color: $body-text-color;
+}
+
+h1, h2, h3, a {
+  color: $main-brand-color;
+}
+
+
+/* Fonts */
+body {
+  font-family: $brand-font;
+  font-size: 12px;
+}
+
+strong, b {
+  font-weight: bold;
+}
+
+h1, h2 {
+  font-weight: normal;
+  text-decoration: inherit; // Make sure headings inside anchor tags are underlined where required
+}
+
+h1 {
+  font-size: 270%;
+  line-height: 120%;
+}
+
+h2 {
+  font-size: 160%;
+  line-height: 130%;
+}
+
+h3 {
+  font-size: 100%;
+  line-height: 140%;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+
+p, li {
+  color: $body-text-color;
+}
+
+
+/* Layout */
+h1 {
+  margin: 0 0 0.5em 0;
+}
+
+h2 {
+  margin: 1em 0 0.5em 0;
+}
+
+h3 {
+  margin: 1.5em 0 1em 0;
+}
+
+p {
+  margin: 1em 0 1em 0;
+}
+
+ul {
+  padding: 0 0 0 1.75em;
+  margin: 1em 0 1em 0;
+  ul {
+    margin: 0;
+  }
+}
+
+li {
+  padding: 0;
+  margin: 0 0 0.25em 0;
+}
+
+hr {
+  border: 0 none;
+  height: 1px;
+  margin: 0;
+  width: 100%;
+  color: $main-brand-color/2 + $pale-brand-color/2;
+  background-color: $main-brand-color/2 + $pale-brand-color/2;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  border: none;
+}
+
+figure {
+  margin: 2em 0 3em 0;
+  text-align: center;
+}
+
+figcaption {
+  margin: 1em 0;
+}
