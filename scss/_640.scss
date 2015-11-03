@@ -134,7 +134,7 @@ $base-font-scale: 300%;
 
 /* Page banners */
 .breakpoint-small .banner-container {
-  @include box-shadow(none);
+  box-shadow: none;
   min-width: $min-page-width;
   font-size: $base-font-scale;
   .banner {
@@ -162,7 +162,7 @@ $base-font-scale: 300%;
   padding-bottom: $header-height;
   h1 {
     padding-bottom: $header-logotype-height;
-    @include background-size($mobile-header-background-size);
+    background-size: $mobile-header-background-size;
     a {
       width: $logotype-width/$base-logotype-height * $header-logotype-height * 0.8;
       height: 0;
@@ -215,7 +215,7 @@ $base-font-scale: 300%;
 .breakpoint-small {
   #menu {
     ul {
-      @include box-shadow(0 1em 1em rgba(0,0,0,0.3));
+      box-shadow: 0 1em 1em rgba(0,0,0,0.3);
       display: none;
       overflow: hidden;
       background-color: $pale-brand-color;
@@ -240,7 +240,7 @@ $base-font-scale: 300%;
     }
   }
   #menu-toggle {
-    @include background-size(100% 100%);
+    background-size: 100% 100%;
     display: block;
     position: relative;
     height: 3em;
@@ -317,7 +317,7 @@ $base-font-scale: 300%;
         display: none;
       }
       &.right {
-        @include border-radius(0);
+        border-radius: 0;
         display: block;
         width: 100%;
         height: 0;

@@ -273,7 +273,7 @@ $base-font-scale: 145%;
       .item .overlay {  // The background images for the wide spotlight
         width: 45%;
         &.right {  // The user-defined spotlight background image
-          @include border-bottom-right-radius(0);
+          border-bottom-right-radius: 0;
           width: 88%;
         }
       } 
@@ -299,7 +299,7 @@ $base-font-scale: 145%;
           background-position: right;
         }
         &.right {
-          @include border-bottom-right-radius((309/430) * 10% 10%);
+          border-bottom-right-radius: (309/430) * 10% 10%;
         }
       }
     }
@@ -411,7 +411,7 @@ $base-font-scale: 145%;
 /* Site footer, including government logos and disclaimers */
 .breakpoint-medium #footer {
   .disclaimer {
-    @include background-size(auto);
+    background-size: auto;
     position: relative;
     overflow: hidden;
     background-color: 3 * ($main-brand-color/4) + $pale-brand-color/4;
@@ -425,10 +425,10 @@ $base-font-scale: 145%;
 
 .breakpoint-medium.multiplebgs #footer {
   .logos, .spacer {
-    @include background-size(auto 100%);
+    background-size: auto 100%;
   }
   .logos {
-    @include background-size(auto 100%);
+    background-size: auto 100%;
     background-image: url(#{$site-prefix}-footer-background-left.png);
     background-position: left;
   }
