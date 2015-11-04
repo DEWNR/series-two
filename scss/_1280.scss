@@ -176,11 +176,11 @@ span.scientific-name {
   .js & {
     display: block;
   }
-  &>ul {  
+  &>ul {
     height: 1.8em;
     border-bottom: solid 1px $main-brand-color/2 + $pale-brand-color/2;
     &>li {
-      background-image: url(/files/0/511/regional-menu-arrow-down.png);
+      background-image: url(#{$shared-image-path}regional-menu-arrow-down.png);
       background-repeat: no-repeat;
       background-position: center right;
       .scaled.inlinesvg & {
@@ -194,7 +194,7 @@ span.scientific-name {
     padding: 0;
     li {
       float: left;
-      position: relative; 
+      position: relative;
       margin: 0 1em 0 0;
       padding: 0 1em 0 0;
       a {
@@ -488,7 +488,7 @@ span.scientific-name {
         font-weight: normal;
         white-space: nowrap;
         box-sizing: border-box;
-        background-image: url('/files/0/511/lg-module-background.png');
+        background-image: url('#{$shared-image-path}lg-module-background.png');
         .rgba & {
           background-image: none;
           background-color: rgba(0,0,0,0.75);
@@ -553,7 +553,7 @@ span.scientific-name {
       margin-right: $padding;
       background-repeat: no-repeat;
       background-size: auto 100%;
-      
+
     }
     &.first .overlay {
         border-top-left-radius: 40%;
@@ -563,7 +563,7 @@ span.scientific-name {
         border-top-left-radius: 40%;
         border-top-right-radius: 0;
       }
-  }   
+  }
   &.icon, &#i-want-to {
     float: none;
     clear: right;
@@ -589,8 +589,8 @@ span.scientific-name {
       line-height: 100%;
     }
   }
-  
-  
+
+
     &.shortIcon {
     height: 2.8em;
     border-top: solid 1px $main-brand-color/2 + $pale-brand-color/2;
@@ -616,8 +616,8 @@ span.scientific-name {
       line-height: 100%;
     }
   }
-  
-  
+
+
   &.promotion {
     width: $four-column-module-width - 2 * $padding + $margin;  // Incorporate the right-hand margin into the width so the image is flush with the container
     height: auto;
@@ -815,15 +815,15 @@ img.species, img.campsite {
   margin-left: auto;
   margin-right: auto;
   padding: 0 12px 12px 12px;
-  font-size: $base-font-scale;  
+  font-size: $base-font-scale;
   line-height: 120%;
   .multiplebgs & {  // Add the background shadows for browsers that support it
-    background-image: url(/files/0/511/regional-footer-shadow-left.png), url(/files/0/511/regional-footer-shadow-right.png), url(/files/0/511/regional-footer-shadow-top-left.png), url(/files/0/511/regional-footer-shadow-top-right.png);
+    background-image: url(#{$shared-image-path}regional-footer-shadow-left.png), url(#{$shared-image-path}regional-footer-shadow-right.png), url(#{$shared-image-path}regional-footer-shadow-top-left.png), url(#{$shared-image-path}regional-footer-shadow-top-right.png);
     background-position: bottom left, bottom right, left, right;
     background-repeat: no-repeat, no-repeat, repeat-y, repeat-y;
     background-size: auto 67px, auto 67px, 24px 100%, 24px 100%;
   }
-  .light {background-color: $mid-brand-color !important;}  
+  .light {background-color: $mid-brand-color !important;}
 }
 
 /* Site header */
@@ -923,7 +923,7 @@ img.species, img.campsite {
   width: 100%;
   height: 41px;
   background-color: $main-brand-color;
-  background-image: url(/files/0/511/regional-menu-background.png);
+  background-image: url(#{$shared-image-path}regional-menu-background.png);
   background-repeat: repeat-x;
   form {
     position: absolute;
@@ -947,7 +947,7 @@ img.species, img.campsite {
       padding: 14px 1em;
       margin: 0;
       background-color: $pale-brand-color;
-      background-image: url(/files/0/511/regional-menu-background.png);
+      background-image: url(#{$shared-image-path}regional-menu-background.png);
       background-position: right;
       background-size: auto;
       &.active {
@@ -1409,7 +1409,7 @@ img.species, img.campsite {
   }
 }
 
-/* Persistent modules */ 
+/* Persistent modules */
 #find-us, #catalogue, #orders {
   background-repeat: no-repeat;
   .scaled & {
@@ -1422,7 +1422,7 @@ img.species, img.campsite {
 
 #find-us {
   $icon-type: if($find-us-icon, $find-us-icon, location);
-  
+
   background-image: url(#{$site-prefix}-icon-#{$icon-type}.png);
   .scaled.inlinesvg & {
     background-image: url(#{$svg-path}#{$site-prefix}-icon-#{$icon-type}.svg);
@@ -1607,34 +1607,34 @@ img.species, img.campsite {
       background-size: contain;
       &.gosa {
         width: 132px;
-        background-image: url(/files/0/511/regional-footer-gosa.png);
+        background-image: url(#{$shared-image-path}regional-footer-gosa.png);
         .scaled.inlinesvg & {
           background-image: url(#{$svg-path}regional-footer-gosa.svg);
         }
       }
       &.south-australia {
         width: 123px;
-        background-image: url(/files/0/511/regional-footer-south-australia.png);
+        background-image: url(#{$shared-image-path}regional-footer-south-australia.png);
         .scaled.inlinesvg & {
           background-image: url(#{$svg-path}regional-footer-south-australia.svg);
         }
       }
       &.sagovau {
         width: 120px;
-        background-image: url(/files/0/511/regional-footer-sagovau.png);
+        background-image: url(#{$shared-image-path}regional-footer-sagovau.png);
         .scaled.inlinesvg & {
           background-image: url(#{$svg-path}regional-footer-sagovau.svg);
         }
       }
     }
     .multiplebgs & {
-      background-image: url(/files/0/511/regional-menu-shadow.png), url(#{$site-prefix}-footer-background-left.png);
+      background-image: url(#{$shared-image-path}regional-menu-shadow.png), url(#{$site-prefix}-footer-background-left.png);
       background-position: top, left;
       background-repeat: repeat-x, no-repeat;
       background-size: auto, auto 100%;
     }
     .scaled.inlinesvg.multiplebgs & {
-      background-image: url(/files/0/511/regional-menu-shadow.png), url(#{$svg-path}#{$site-prefix}-footer-background-left.svg);
+      background-image: url(#{$shared-image-path}regional-menu-shadow.png), url(#{$svg-path}#{$site-prefix}-footer-background-left.svg);
     }
   }
   .spacer {
@@ -1645,13 +1645,13 @@ img.species, img.campsite {
       background-image: url(#{$svg-path}#{$site-prefix}-footer-background-right.svg);
     }
     .multiplebgs & {
-      background-image: url(/files/0/511/regional-menu-shadow.png), url(#{$site-prefix}-footer-background-right.png);
+      background-image: url(#{$shared-image-path}regional-menu-shadow.png), url(#{$site-prefix}-footer-background-right.png);
       background-position: top, right;
       background-repeat: repeat-x, no-repeat;
       background-size: auto, auto 100%;
     }
     .scaled.inlinesvg.multiplebgs & {
-      background-image: url(/files/0/511/regional-menu-shadow.png), url(#{$svg-path}#{$site-prefix}-footer-background-right.svg);
+      background-image: url(#{$shared-image-path}regional-menu-shadow.png), url(#{$svg-path}#{$site-prefix}-footer-background-right.svg);
     }
   }
   .disclaimer {

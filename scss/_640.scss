@@ -105,7 +105,7 @@ $base-font-scale: 300%;
       background-image: none !important;
       background-color: transparent !important;
       color: inherit;
-    } 
+    }
   }
 }
 
@@ -188,7 +188,7 @@ $base-font-scale: 300%;
     & img{
       width:100%;
       height:100%;
-      }  
+      }
   }
 }
 
@@ -245,7 +245,7 @@ $base-font-scale: 300%;
     position: relative;
     height: 3em;
     width: 4.6em;
-    background-image: url(/files/0/511/regional-menu-button.png);
+    background-image: url(#{$shared-image-path}regional-menu-button.png);
     background-repeat: no-repeat;
     z-index: 1;
     &.active {
@@ -467,15 +467,15 @@ $base-font-scale: 300%;
       }
       &.gosa {
         width: 87px/92px * 6.55em;
-        background-image: url(/files/0/511/regional-footer-gosa-vertical.png);
+        background-image: url(#{$shared-image-path}regional-footer-gosa-vertical.png);
       }
       &.south-australia {
         width:66px/92px * 6.55em;
-        background-image: url(/files/0/511/regional-footer-south-australia-vertical.png);
+        background-image: url(#{$shared-image-path}regional-footer-south-australia-vertical.png);
       }
       &.sagovau {
         width:54px/92px * 6.55em;
-        background-image: url(/files/0/511/regional-footer-sagovau-vertical.png);
+        background-image: url(#{$shared-image-path}regional-footer-sagovau-vertical.png);
       }
     }
   }
