@@ -1,4 +1,4 @@
-/* Provides site's basic static styling for a device with a screen size of 1280dp or more */
+﻿/* Provides site's basic static styling for a device with a screen size of 1280dp or more */
 
 /* Variables */
 $margin: 12px;
@@ -469,6 +469,9 @@ span.scientific-name {
     background-position: top;
     background-repeat: no-repeat;
     background-size: 100%;
+    p { 
+      color: $body-text-color; 
+    }
     &.lg {  // Larger image-base module; only includes headline
       padding: 0;
       height: 218px;
@@ -881,19 +884,33 @@ img.species, img.campsite {
       margin-left: 0.4em;
       float: left;
       color: $header-text-color;
-      &+li {
-        @mixin before {
-          display: block;
-          float: left;
-          content: "|";
-          margin-right: 0.4em;
-        }
-        &:before {
-          @include before;
-        }
-        &::before {
-          @include before;
-        }
+      // &+li {
+      //   @mixin before {
+      //     display: block;
+      //     float: left;
+      //     content: "|";
+      //     margin-right: 0.4em;
+      //   }
+      //   &:before {
+      //     @include before;
+      //   }
+      //   &::before {
+      //     @include before;
+      //   }
+      // }
+      &:nth-of-type(+2) {
+          @mixin before {
+            display: block;
+            float: left;
+            content: "|";
+            margin-right: 0.4em;
+          }
+          &:before {
+            @include before;
+          }
+          &::before {
+            @include before;
+          }
       }
       a {
         color: $header-text-color;
@@ -902,7 +919,7 @@ img.species, img.campsite {
           width: 2em;
           background-position: center;
           background-repeat: no-repeat;
-          @each $channel in facebook, twitter, youtube, instagram {
+          @each $channel in facebook, twitter, youtube, instagram, subscribe {
             &.#{$channel} {
               background-image: url(#{$site-prefix}-#{$channel}.png);
               .scaled.inlinesvg & {
