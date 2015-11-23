@@ -903,7 +903,7 @@ img.species, img.campsite {
             display: block;
             float: left;
             content: "|";
-            margin-right: 0.4em;
+            //margin-right: 0.4em;  //FireFox fix 1 for social-media icon. 
           }
           &:before {
             @include before;
@@ -911,6 +911,9 @@ img.species, img.campsite {
           &::before {
             @include before;
           }
+      }
+      &:nth-of-type(+2) a {   //FireFox fix 2 for social-media icon. 
+        margin: 0 0 0 0.5em;
       }
       a {
         color: $header-text-color;
