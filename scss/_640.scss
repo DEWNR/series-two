@@ -193,7 +193,7 @@ $base-font-scale: 300%;
 }
 
 @mixin social-icons($type: png, $path: null) {
-  @each $channel in facebook, twitter, youtube, instagram {
+  @each $channel in facebook, twitter, youtube, instagram, subscribe {
     &.#{$channel} {
       background-image: url(#{$path}#{$site-prefix}-#{$channel}-dark.#{$type});
     }
