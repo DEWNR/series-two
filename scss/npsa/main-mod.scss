@@ -49,3 +49,32 @@
     padding: 40px 20px 0;
     margin: 0;
 }
+
+/* style predictive search - start */
+#searchKeyword {
+    font-size: 12px;
+}
+#menu form input[type=submit] {
+    background-color: #d1e0d3;
+}
+.autocomplete-suggestions {
+    background-color: #d1e0d3;
+    padding: 0.5em 0.6em 1em 0.6em;
+    border-bottom-left-radius: 1em 1em;
+    max-width: 222px;
+    overflow: hidden;
+}
+.autocomplete-suggestion {
+    list-style: none;
+    color: #555;
+    font-size: 1.1em;
+    line-height: 1.7em;
+
+    strong {
+        color: #08713e;
+    }
+    &:hover {
+        color: #08713e;
+    }
+}
+/* style predictive search - end */
