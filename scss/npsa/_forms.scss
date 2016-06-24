@@ -55,11 +55,14 @@
 }
 
 .se-form-container .item input[type=submit] {
-    padding: 15px;
     color: #fffbee;
     border: none;
     border-radius: 6px;
     background-color: #026937;
+    display: block;
+    margin-left: auto;
+    margin-right: 18px;
+    padding: 1em 4em;
 }
 
 .se-form-container .item input[type=submit]:hover {
