@@ -57,6 +57,9 @@
 #menu form input[type=submit] {
     background-color: #d1e0d3;
 }
+.breakpoint-small #menu form input[type=submit] {
+    background-color: transparent;
+}
 .autocomplete-suggestions {
     background-color: #d1e0d3;
     padding: 0.5em 0em 1em 0em;
@@ -89,14 +92,13 @@
 /* style predictive search - end */
 
 
-
-
 /* Style in page search */
 .in-page-search__input {
+    box-sizing: border-box;
     font-size: 1.2rem;
-    padding: 0.4em;
+    padding: 0 0.4em;
     height: 41px;
-    width: calc(100% - 48px);
+    width: calc(100% - (41px + 0.4em));
     // width: -moz-calc(100% - 48px);
     // width: -webkit-calc(100% - 48px);
     // width: -o-calc(100% - 48px);
