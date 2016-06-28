@@ -36,12 +36,14 @@ var argv = require('yargs').argv,   // Pass agruments using the command line
     // Create the dest object
 
     paths.dest = {};
-    
+
     paths.dest.root = dest;
 
     paths.dest.images = dest + "images/";
 
     paths.dest.js = dest + "js/";
+
+    paths.dest.html = dest + "";
 
     paths.dest.css = dest + "css/"
 
@@ -49,7 +51,7 @@ var argv = require('yargs').argv,   // Pass agruments using the command line
     // Create the source object
 
     paths.src = {};
-    
+
     paths.src.root = src;
 
     paths.src.images = src + "images/";
@@ -58,8 +60,10 @@ var argv = require('yargs').argv,   // Pass agruments using the command line
 
     paths.src.js = src + "js/";
 
+    paths.src.html = src + "html/";
+
     paths.src.scss = src + "scss/"
-    
+
 }());
 
 
@@ -113,7 +117,7 @@ jsList = [
 // Remove destination folder in production mode
 
 gulp.task('clean', function () {
-    
+
     if (argv.production) {
 
         del.sync([paths.dest.root]);
@@ -207,6 +211,17 @@ gulp.task('scss:watch', function () {
 });
 
 
+gulp.task('html', function () {
+
+    console.log('doing html');
+    return gulp.src(paths.src.html + '**/*.html')
+        .pipe(gulp.dest(paths.dest.html))
+        .pipe(browserSync.stream());
+});
+
+gulp.task('html:watch', function () {
+    gulp.watch(paths.src.html + '**/*.html', ['html']);
+});
 
 
 
@@ -224,12 +239,12 @@ gulp.task('serve', function() {
 
 // Run all build tasks (once)
 
-gulp.task('build', ['clean','imagemin','js-concat','scss']);
+gulp.task('build', ['clean','imagemin','js-concat','scss', 'html']);
 
 
 // Run all watch tasks
 
-gulp.task('build:watch', ['imagemin:watch','js-concat:watch','scss:watch']);
+gulp.task('build:watch', ['imagemin:watch','js-concat:watch','scss:watch','html:watch']);
 
 
 // Build, serve and watch
