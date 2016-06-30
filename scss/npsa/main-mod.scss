@@ -60,16 +60,25 @@
 .breakpoint-small #menu form input[type=submit] {
     background-color: transparent;
 }
+
 .autocomplete-suggestions {
     background-color: #d1e0d3;
     padding: 0.5em 0em 1em 0em;
     border-bottom-left-radius: 1em 1em;
     max-width: 222px;
     overflow: hidden;
+
+    .breakpoint-medium & {
+        max-width: 100%;
+        width: 86.4% !important;
+    }
+
     &.render {
         max-width: 87.6%;
     }
 }
+
+
 .autocomplete-suggestion {
     list-style: none;
     color: #555;
@@ -81,12 +90,18 @@
     strong {
         color: #08713e;
     }
+
     &:hover {
         color: #08713e;
     }
+
     &.autocomplete-selected {
         background-color: #b0cab4;
         color: #111;
+    }
+
+    .breakpoint-medium & {
+        font-size: 3.6em;
     }
 }
 /* style predictive search - end */
@@ -99,9 +114,6 @@
     padding: 0 0.4em;
     height: 41px;
     width: calc(100% - (41px + 0.4em));
-    // width: -moz-calc(100% - 48px);
-    // width: -webkit-calc(100% - 48px);
-    // width: -o-calc(100% - 48px);
 }
 .in-page-search__button {
     background-color: #d1e0d3;
@@ -112,7 +124,7 @@
     font-size: 1.2rem;
     width: 41px;
     height: 41px;
-    margin: 0;
+    margin: 0 0 -0.75em;
     padding: 0;
     border: none;
     border: solid 1px #08713e;
@@ -247,21 +259,3 @@
         padding: 0;
     }
 }
-
-
-/* Responsive hack - for Mobile */
-@media (min-width: 320px) and (max-width: 1186px) {
-    #container {
-        width:100%;
-    }
-}
-@media (max-width: 1186px) {
-    .autocomplete-suggestions {
-        max-width: 100%;
-        width: 86.4% !important;
-    }
-    .autocomplete-suggestion {
-        font-size: 3.6em;
-    }
-}
-
