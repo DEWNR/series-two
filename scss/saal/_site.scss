@@ -18,3 +18,12 @@ $logotype-margin-left: 18px;
 /* Images */
 $header-background-image: url(#{$image-path}#{$site-prefix}-header-background.png);
 $header-background-svg: $header-background-image;
+
+
+/* Mid Sized Module */
+.scaled.inlinesvg .landing .module.mid.list {
+    background-image: url(/assets/images/svg/saal-module-header-events.svg);
+}
+.landing .module.mid.list.list {
+    background-image: url(/assets/images/svg/saal-module-header-events.svg);
+}
