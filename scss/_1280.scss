@@ -1,4 +1,4 @@
-﻿/* Provides site's basic static styling for a device with a screen size of 1280dp 
+﻿/* Provides site's basic static styling for a device with a screen size of 1280dp
 or more */
 
 
@@ -959,7 +959,7 @@ img.campsite {
           display: block;
           float: left;
           content: "|";
-          //margin-right: 0.4em;  //FireFox fix 1 for social-media icon. 
+          //margin-right: 0.4em;  //FireFox fix 1 for social-media icon.
         }
         &:before {
           @include before;
@@ -968,7 +968,7 @@ img.campsite {
           @include before;
         }
       }
-      &:nth-of-type(+2) a {  //FireFox fix 2 for social-media icon. 
+      &:nth-of-type(+2) a {  //FireFox fix 2 for social-media icon.
         margin: 0 0 0 0.5em;
       }
       a {
@@ -1299,6 +1299,16 @@ img.campsite {
     width: $content-width + $module-width - $padding;
     margin-right: $padding;
   }
+}
+
+  /* css for no righthand column */
+.main__group>#breadcrumbs,
+.main__group>#content {
+  float: right;
+  clear: right;
+  width: 888px;
+  padding: 0;
+  margin: $padding $padding $padding -100%;
 }
 
 #breadcrumbs {
