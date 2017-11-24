@@ -1,6 +1,6 @@
 /* Combine the site-specific variables with the styles for the print.css file */
 
-@import "../_global.scss";      // Import the global variables
-@import "_site.scss";           // Import the site-specific variables - must be done after global variables
-@import "../_defaults.scss";    // Import the default variables - must be done after site and global variables have been imported
-@import "../_print.scss";        // Import the print styles
+@import "../global";      // Import the global variables
+@import "site";           // Import the site-specific variables - must be done after global variables
+@import "../defaults";    // Import the default variables - must be done after site and global variables have been imported
+@import "../print";        // Import the print styles
