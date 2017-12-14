@@ -5,6 +5,7 @@ var argv = require('yargs').argv,   // Pass agruments using the command line
     browserSync = require('browser-sync').create(),     // Automatically refresh the browser
     concat = require('gulp-concat'),    // Combine JavaScript simple JavasScript files
     del = require('del'),   // Delete unwanted files and folders (eg dist before production build)
+    handleErrors = require('./lib/handleErrors'),
     gulp = require('gulp'),
     gulpif = require('gulp-if'),
     gutil = require( 'gulp-util' ),
@@ -39,7 +40,7 @@ var argv = require('yargs').argv,   // Pass agruments using the command line
 
     paths.dest.root = dest;
 
-    paths.dest.images = dest + "images/";
+    paths.dest.images = dest + "css/";  //just put images in same folder as css
 
     paths.dest.js = dest + "js/";
 
@@ -134,18 +135,19 @@ gulp.task('clean', function () {
 
 gulp.task('imagemin', function () {
 
-    return gulp.src(paths.src.images + '*')
+    return gulp.src(paths.src.images + '**/*')
         .pipe(imagemin({
             multipass: true,
             progressive: true,
             svgoPlugins: [{removeViewBox: false}]
         }))
+        .on('error', handleErrors)
         .pipe(gulp.dest(paths.dest.images))
         .pipe(browserSync.stream());
 });
 
 gulp.task('imagemin:watch', function () {
-    gulp.watch(paths.src.images + '*', ['imagemin']);   // TODO consider changing to gulp-watch so only changed files are processed
+    gulp.watch(paths.src.images + '**/*', ['imagemin']);   // TODO consider changing to gulp-watch so only changed files are processed
 });
 
 
@@ -213,7 +215,6 @@ gulp.task('scss:watch', function () {
 
 gulp.task('html', function () {
 
-    console.log('doing html');
     return gulp.src(paths.src.html + '**/*.html')
         .pipe(gulp.dest(paths.dest.html))
         .pipe(browserSync.stream());

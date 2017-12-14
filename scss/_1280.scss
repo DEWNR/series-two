@@ -982,6 +982,7 @@ img.campsite {
           twitter,
           youtube,
           instagram,
+          flickr,
           subscribe {
             &.#{$channel} {
               background-image: url(#{$site-prefix}-#{$channel}.png);

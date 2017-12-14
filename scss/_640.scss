@@ -422,6 +422,7 @@ $base-font-scale: 300%;
     twitter,
     youtube,
     instagram,
+    flickr,
     subscribe {
         &.#{$channel} {
             background-image: url(#{$path}#{$site-prefix}-#{$channel}-dark.#{$type});
