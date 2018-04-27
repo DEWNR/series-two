@@ -27,4 +27,4 @@ npm install
 
 gulp
 
-gulp -production
+gulp --production
