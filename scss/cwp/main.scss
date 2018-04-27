@@ -8,3 +8,6 @@
 @import "../1279";        // Import additional styles for screens 1279px or less
 @import "../1024";        // Import additional styles for screens 1024px or less
 @import "../640";         // Import additional styles for screens 640px or less
+@import "../component.curator";
+
+.some-class {color: #000;}
