@@ -36,22 +36,17 @@
     }       
 }
 .crt-popup-visible .crt-popup-wrapper .crt-popup {
-    .crt-popup-header .crt-post-name span {
-        font-weight: bold;
-    }
-    .crt-popup-left .crt-pagination ul li {
-        a {
-            border: 0;
-            background-color: #777777;
-            opacity: 0.5;
+    .crt-popup-header {
+        .crt-post-name {
+            position: relative;
+            left: 0;
+            top: 7px;
+            span {
+                font-weight: bold;
+            }
         }
-        &.selected a {
-            background-color: #777777;
-            opacity: 1;
-        }    
-    }
-    .crt-popup-left .crt-pagination ul li.selected a {
-        background-color: #777777;
-        opacity: 1;
+        > img {
+            display: none;
+        }        
     }
 }
