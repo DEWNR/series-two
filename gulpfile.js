@@ -3,6 +3,7 @@
 var argv = require('yargs').argv,   // Pass agruments using the command line
     autoprefixer = require('gulp-autoprefixer'),    // Add vendor prefixes to CSS
     browserSync = require('browser-sync').create(),     // Automatically refresh the browser
+    babel = require('gulp-babel'),
     concat = require('gulp-concat'),    // Combine JavaScript simple JavasScript files
     del = require('del'),   // Delete unwanted files and folders (eg dist before production build)
     handleErrors = require('./lib/handleErrors'),
@@ -44,6 +45,8 @@ var argv = require('yargs').argv,   // Pass agruments using the command line
 
     paths.dest.js = dest + "js/";
 
+    paths.dest.jsEs6 = dest + "js/";
+
     paths.dest.html = dest + "";
 
     paths.dest.css = dest + "css/"
@@ -60,6 +63,8 @@ var argv = require('yargs').argv,   // Pass agruments using the command line
     paths.src.includes = src + "includes/";
 
     paths.src.js = src + "js/";
+
+    paths.src.jsEs6 = src + "js-es6/";
 
     paths.src.html = src + "html/";
 
@@ -176,8 +181,22 @@ gulp.task('js-concat', function () {
 
 });
 
+gulp.task('js-modern', function () {
+
+    gulp.src(paths.src.jsEs6 + '**/*.js')
+    .pipe(concat('s2-modern.js'))
+      .pipe(babel({ presets: ['@babel/env'] }))
+      .pipe(gulpif(argv.production, pipe( uglify(), rev() )))
+      .pipe(gulp.dest(paths.dest.jsEs6))
+      .pipe(browserSync.stream());
+});
+
 gulp.task('js-concat:watch', function () {
-    gulp.watch(paths.src.js + '**/*.js', ['js-bundle']);
+    gulp.watch(paths.src.js + '**/*.js', ['js-concat']);
+});
+
+gulp.task('js-modern:watch', function () {
+    gulp.watch(paths.src.jsEs6 + '**/*.js', ['js-modern']);
 });
 
 
@@ -240,12 +259,12 @@ gulp.task('serve', function() {
 
 // Run all build tasks (once)
 
-gulp.task('build', ['clean','imagemin','js-concat','scss', 'html']);
+gulp.task('build', ['clean','imagemin','js-concat','js-modern','scss', 'html']);
 
 
 // Run all watch tasks
 
-gulp.task('build:watch', ['imagemin:watch','js-concat:watch','scss:watch','html:watch']);
+gulp.task('build:watch', ['imagemin:watch','js-concat:watch','js-modern:watch','scss:watch','html:watch']);
 
 
 // Build, serve and watch

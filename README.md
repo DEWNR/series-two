@@ -28,3 +28,8 @@ npm install
 gulp
 
 gulp --production
+
+
+## Javascript files
+
+Modern javascript can be split into logical files in the 'js-es6' folder and will be compiled into s2-modern.js via the 'gulp js-modern' task.
