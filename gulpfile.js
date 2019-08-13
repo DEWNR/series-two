@@ -49,6 +49,8 @@ var argv = require('yargs').argv,   // Pass agruments using the command line
 
     paths.dest.html = dest + "";
 
+    paths.dest.static = dest + "";
+
     paths.dest.css = dest + "css/"
 
 
@@ -67,6 +69,8 @@ var argv = require('yargs').argv,   // Pass agruments using the command line
     paths.src.jsEs6 = src + "js-es6/";
 
     paths.src.html = src + "html/";
+
+    paths.src.static = src + "static/";
 
     paths.src.scss = src + "scss/"
 
@@ -116,6 +120,12 @@ jsList = [
     }
 ];
 
+// {
+//     source: [
+//         paths.src.js + "maps/*.js"
+//     ],
+//     destination: paths.dest.js + "maps/"
+// }
 
 
 
@@ -160,19 +170,13 @@ gulp.task('imagemin:watch', function () {
 
 
 // Concatenate JavaScript
-
-/**
- * Note: this method is deprecated. User Browserify for all new script bundles.
- **/
-
 gulp.task('js-concat', function () {
 
     // Loop through each bundle.
-
     jsList.forEach(function (bundle) {
 
         return gulp.src(bundle.source)
-            .pipe(concat(bundle.filename))
+            // .pipe(gulpif(bundle.source.indexOf('/maps/') !== -1, concat(bundle.filename)))
             .pipe(gulpif(argv.production, pipe(uglify(), rev())))    // Uglify and fingerprint if in production mode
             .pipe(gulp.dest(bundle.destination))
             .pipe(browserSync.stream());
@@ -181,22 +185,25 @@ gulp.task('js-concat', function () {
 
 });
 
+
 gulp.task('js-modern', function () {
 
     gulp.src(paths.src.jsEs6 + '**/*.js')
-    .pipe(concat('s2-modern.js'))
-      .pipe(babel({ presets: ['@babel/env'] }))
+      .pipe(concat('s2-modern.js')).on('error', handleErrors)
+      .pipe(babel({ presets: ['@babel/env'] })).on('error', handleErrors)
       .pipe(gulpif(argv.production, pipe( uglify(), rev() )))
-      .pipe(gulp.dest(paths.dest.jsEs6))
+      .pipe(gulp.dest(paths.dest.jsEs6)).on('error', handleErrors)
       .pipe(browserSync.stream());
 });
 
-gulp.task('js-concat:watch', function () {
-    gulp.watch(paths.src.js + '**/*.js', ['js-concat']);
-});
 
 gulp.task('js-modern:watch', function () {
     gulp.watch(paths.src.jsEs6 + '**/*.js', ['js-modern']);
+});
+
+
+gulp.task('js-concat:watch', function () {
+    gulp.watch(paths.src.js + '**/*.js', ['js-concat']);
 });
 
 
@@ -227,8 +234,22 @@ gulp.task('scss', function () {
         .pipe(browserSync.stream());
 });
 
+
 gulp.task('scss:watch', function () {
     gulp.watch(paths.src.scss + '**/*.scss', ['scss']);     // TODO consider changing to gulp-watch so new files are detected
+});
+
+
+gulp.task('static', function () {
+
+    return gulp.src(paths.src.static + '**/*.*')
+        .pipe(gulp.dest(paths.dest.static))
+        .pipe(browserSync.stream());
+});
+
+
+gulp.task('static:watch', function () {
+    gulp.watch(paths.src.static + '**/*.*', ['static']);
 });
 
 
@@ -259,12 +280,12 @@ gulp.task('serve', function() {
 
 // Run all build tasks (once)
 
-gulp.task('build', ['clean','imagemin','js-concat','js-modern','scss', 'html']);
+gulp.task('build', ['clean','imagemin','js-modern','js-concat','scss', 'html', 'static']);
 
 
 // Run all watch tasks
 
-gulp.task('build:watch', ['imagemin:watch','js-concat:watch','js-modern:watch','scss:watch','html:watch']);
+gulp.task('build:watch', ['imagemin:watch','js-modern:watch','js-concat:watch','scss:watch','html:watch','static:watch']);
 
 
 // Build, serve and watch
