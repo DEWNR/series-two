@@ -1420,6 +1420,7 @@ img.campsite {
         border: 1px solid grey !important;
       }
       input[type=text],
+      input[type=email],
       input[type=file] {
         margin: 0 0 0 30%;
         display: block;
@@ -1450,7 +1451,8 @@ img.campsite {
         border: none;
         padding: 0;
       }
-      table {
+      table,
+      .checkbox-group {
         margin: 0 -100% 0 30%;
         display: block;
         width: 65%;
