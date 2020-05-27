@@ -1,8 +1,5 @@
 // Apply progressive enhancements as applicable.
 // Requires jQuery and prepare.js. Must be concatenated and minified before use in a production environment.
-// @codekit-prepend ../includes/jquery.mobile.custom.1409290931.js
-// @codekit-prepend ../includes/jquery.fancybox.js
-// @codekit-prepend ../includes/jquery.fancybox-thumbs.js
 
 // Make sure global variables set outside the script are accessible
 var regionName, brandColour, pathToFiles, screenSizes, screenSize, isResponsive;
@@ -27,7 +24,7 @@ if (screenSize == 'small' || screenSize == 'medium') {
 $(".menu-bar>li:not(.last)").each(function() {
   var menuWidth = $(this).children(".dropdown-container").outerWidth();
   var menuOffset = $(this).offset().left;
-  
+
   if (menuWidth + menuOffset > $("#container").outerWidth()) {
     $(this).children(".dropdown-container").css("left", "auto").css("right", "-1px");
   }
@@ -51,7 +48,7 @@ if (screenSize !== 'small' && typeof imageGallery === "object" && typeof imageGa
   });
 }
 
-// Show only the first five items in module lists  
+// Show only the first five items in module lists
 $(".content>.module>ul").each(function() {
   targetItems = $(this).children(":gt(4)");
   if (targetItems.length > 0) {
@@ -68,28 +65,28 @@ var teacherTubeEmbedPrefix = 'http://www.teachertube.com/embed.php';
 
 if (screenSize == 'small') {
   var youTubeVideoPrefix = 'http://www.youtube.com/watch?v=';
-  var youTubePlaylistPrefix = 'http://www.youtube.com/playlist?list='; 
+  var youTubePlaylistPrefix = 'http://www.youtube.com/playlist?list=';
   var teacherTubeVideoPrefix = 'http://www.teachertube.com/mobile/video/';
-  
+
   $("a[href^='"+youTubeEmbedPrefix+"']").each(function() { // Check all the YouTube links
     var videoHREF, videoID, playlistID;
     var searchString = $(this).attr('href').replace(youTubeEmbedPrefix, "");  // Remove the prefix from the search string to match things easier
-    
-    var videoRegExp = /^([^"&?\/ ]+)/  // Search the start of the string for anything but these characters
-    var playlistRegExp = /(?:\?|\&)*list=([^"&?\/ ]+)/  // Search for the list value in the query string
-    
+
+    var videoRegExp = /^([^"&?\/ ]+)/;  // Search the start of the string for anything but these characters
+    var playlistRegExp = /(?:\?|\&)*list=([^"&?\/ ]+)/;  // Search for the list value in the query string
+
     videoID = videoRegExp.exec(searchString);
     playlistID = playlistRegExp.exec(searchString);
-    
+
     // Get the first match for each ID
     if (videoID !== null && videoID.length > 1) {
       videoID = videoID[1];
     }
-    
+
     if (playlistID !== null && playlistID.length > 1) {
       playlistID = playlistID[1];
     }
-    
+
     if (videoID) {  // Check that a video ID has been found
       if (videoID === 'videoseries') {  // Check to see if the link is to a playlist
         if (playlistID) {
@@ -109,16 +106,16 @@ if (screenSize == 'small') {
   $("a[href^='"+teacherTubeEmbedPrefix+"']").each(function() { // Check all the TeacherTube links
     var videoHREF, videoID;
     var searchString = $(this).attr('href').replace(teacherTubeEmbedPrefix, "");
-    
-    var videoRegExp = /=video_([^"&?\/ ]+)/  // Search for a video ID value
-    
+
+    var videoRegExp = /=video_([^"&?\/ ]+)/;  // Search for a video ID value
+
     videoID = videoRegExp.exec(searchString);
-    
+
     // Get the first match for the ID
     if (videoID !== null && videoID.length > 1) {
       videoID = videoID[1];
     }
-    
+
     if (videoID) {  // Check that a video ID has been found
       $(this).attr('href', teacherTubeVideoPrefix+videoID);
     }
@@ -139,7 +136,7 @@ if (screenSize == 'small') {
       var viewPortHeight = $(window).height();
       var videoWidth;
       var videoHeight;
-      
+
       if (viewPortHeight > viewPortWidth*9/16) {
         videoWidth = viewPortWidth*0.8;
         videoHeight = videoWidth*9/16;
@@ -147,12 +144,12 @@ if (screenSize == 'small') {
         videoHeight = viewPortHeight*0.8;
         videoWidth = videoHeight*16/9;
       }
-      
+
       if (videoWidth > 853) {
         videoWidth = 853;
         videoHeight = 480;
       }
-      
+
       $(".fancybox-wrap.fancybox-type-iframe").width(videoWidth + 22).height(videoHeight + 22);
       $(".fancybox-inner").width(videoWidth).height(videoHeight);
       $.fancybox.reposition();
@@ -164,16 +161,16 @@ if (screenSize == 'small') {
 if (screenSize != 'small') {
   $("a[href*='.wufoo.com/forms/']").each(function(i) {
     var formHREF = $(this).attr('href');
-    
+
     // Check for a form hash and username (and store them)
     var formDetailsRegExp = new RegExp(/^https\:\/\/(\w+)\.wufoo.com\/forms\/(\w+)\/?$/gi);
-    
+
     var formDetails = formDetailsRegExp.exec(formHREF);
-    
+
     if (!formDetails) {
       return;
     }
-    
+
     var formUsername = formDetails[1];
     var formHash = formDetails[2];
 
@@ -198,7 +195,7 @@ if (screenSize != 'small') {
       };
       var scr = document.getElementsByTagName('script')[0], formTarget = document.getElementById("wufoo-"+formHash); formTarget.insertBefore(s);
     }
-    
+
     $(this).click(function() {
       setFormWidth(".wufoo-form");
       $.fancybox.open([{
@@ -248,11 +245,11 @@ function responsiveSwitchURL(enabled) {
   var urlPath = location.pathname;
   var urlQueryString = location.search;
   var urlHash = location.hash;
-  
+
   // Check for the presence of a query string
   if (urlQueryString.indexOf("?") >= 0 ) {
     // Check to see if the existing query string contains values for "responsive", and replace them accordingly
-    if (urlQueryString.indexOf("?responsive="+!enabled) == 0) {
+    if (urlQueryString.indexOf("?responsive="+!enabled) === 0) {
       urlQueryString = urlQueryString.replace("?responsive="+!enabled, "?responsive="+enabled);
     } else if (urlQueryString.indexOf("&responsive="+!enabled) > 0) {
       urlQueryString = urlQueryString.replace("&responsive="+!enabled, "&responsive="+enabled);
@@ -270,9 +267,9 @@ function responsiveSwitchURL(enabled) {
 // Set event listeners to toggle menus on click
 function setMenuToggle(target, trigger, dropdown, transitionRate) {
   if (dropdown) {
-    $(target).addClass("inactive")
+    $(target).addClass("inactive");
   } else {
-    $(trigger).addClass("inactive")
+    $(trigger).addClass("inactive");
   }
   $(trigger).click(function() { menuToggle(target, trigger, dropdown, transitionRate); return false; });
 }
@@ -286,14 +283,14 @@ function menuToggle(target, trigger, dropdown, transitionRate) {
   if (!transitionRate) {
     transitionRate = 150;
   }
-  
+
   if (!dropdown) {
     dropdown = false;
   }
-  
+
   // Check that the target is not currently animated
   target = $(target).filter(":not(:animated)");
-  
+
   if (target.length) {
     if (dropdown) {
       //Check to see if other menus are animated: if they are, exit the function
@@ -320,9 +317,9 @@ function preloadImages(imageName) {
   var imageFormat = $("html").hasClass("inlinesvg", "scaled") ? "svg" : "png";
   var imagePath = imageFormat === "svg" ? "/assets/images/svg/" : pathToFiles;
   var innerHTML = '<img class="preload" style="display: none" src="'+imagePath+imageName+'.'+imageFormat+'" />';
-  
+
   $("body").append(innerHTML);
-  $(".preload").remove();  
+  $(".preload").remove();
 }
 
 // Set the width of the Wufoo forms - for use with Fancybox and Wufoo's resizeDone callback.
@@ -340,7 +337,7 @@ function setFormWidth(target) {
   var viewPortWidth = $(window).width();
   var calculatedFormWidth = viewPortWidth*0.8;
   var maxFormWidth = 800;
-        
+
   if (calculatedFormWidth > maxFormWidth) {
     calculatedFormWidth = maxFormWidth;
   }

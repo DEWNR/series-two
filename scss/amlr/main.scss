@@ -8,3 +8,11 @@
 @import "../_1279.scss";        // Import additional styles for screens 1279px or less
 @import "../_1024.scss";        // Import additional styles for screens 1024px or less
 @import "../_640.scss";         // Import additional styles for screens 640px or less
+
+
+/* amlr quick fixes */
+#content table.no-border,
+#content .no-border td,
+#content .no-border th {
+    border: 0;
+}

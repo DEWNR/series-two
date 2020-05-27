@@ -15,7 +15,7 @@ if (navigator.userAgent.match(/(Android)|(Windows Phone)/i) && typeof window.dev
   var dpScreenHeight = screen.height;
 }
 
-//Check the screen size, and assign it a value to determine site behaviour 
+//Check the screen size, and assign it a value to determine site behaviour
 var screenSizes = ['small', 'medium', 'large', 'maximum']; // Use an array and indices to set the values, so the value can be stored as a human-readable string but can still be used for comparison
 var screenSize;
 
@@ -31,9 +31,9 @@ if (dpScreenWidth <= 740 && dpScreenHeight <= 740) {
 screenSize = screenSizes[screenSizeIndex];
 
 // Check the query string and set or remove the "responsive" cookie
-if (location.search.indexOf("?responsive=false") == 0 || location.search.indexOf("&responsive=false") != -1) {
+if (location.search.indexOf("?responsive=false") === 0 || location.search.indexOf("&responsive=false") != -1) {
   createCookie("responsive", "false");
-} else if (location.search.indexOf("?responsive=true") == 0 || location.search.indexOf("&responsive=true") != -1) {
+} else if (location.search.indexOf("?responsive=true") === 0 || location.search.indexOf("&responsive=true") != -1) {
   createCookie("responsive", "", -1);
 }
 
@@ -49,29 +49,28 @@ var isResponsive = (function () {
 })();
 
 // Load the responsive scripts and content
-if (isResponsive) { // Only make the site responsive if the necessary criteria are met
+(function () {
   var root = document.documentElement;
-  
-  // Add the classes to trigger the responsive styling
-  var screenSizeCount = screenSizes.length;
-  var breakpointCount = screenSizeCount - screenSizeIndex; // Calculate the number of breakpoints
-  for (var i = 1; i <= breakpointCount; i++) {
-    root.className += ' breakpoint-'+screenSizes[screenSizeCount - i];
-  }
-  
-  // Add the class to display hi-res or SVG images (as there's no longer a 1:1 pixel mapping)
-  root.className += ' scaled';
-  
-  // Add the viewport meta tag
-  var viewport = document.getElementById("viewport");
-  viewport.setAttribute("content", "width=device-width, initial-scale=1.0");
-} else if (window.devicePixelRatio > 1) {
-  // Add the class to display hi-res or SVG images (as there's no longer a 1:1 pixel mapping)
-  root.className += ' scaled';
-}
 
-// Clear all variables that are no longer required
-root = null;
+  if (isResponsive) { // Only make the site responsive if the necessary criteria are met
+    // Add the classes to trigger the responsive styling
+    var screenSizeCount = screenSizes.length;
+    var breakpointCount = screenSizeCount - screenSizeIndex; // Calculate the number of breakpoints
+    for (var i = 1; i <= breakpointCount; i++) {
+      root.className += ' breakpoint-'+screenSizes[screenSizeCount - i];
+    }
+
+    // Add the class to display hi-res or SVG images (as there's no longer a 1:1 pixel mapping)
+    root.className += ' scaled';
+
+    // Add the viewport meta tag
+    var viewport = document.getElementById("viewport");
+    viewport.setAttribute("content", "width=device-width, initial-scale=1.0");
+  } else if (window.devicePixelRatio > 1) {
+    // Add the class to display hi-res or SVG images (as there's no longer a 1:1 pixel mapping)
+    root.className += ' scaled';
+  }
+}());
 
 
 // Functions
@@ -89,7 +88,7 @@ function loadDeferred() {    // Load deferred scripts. Requires JQuery.
     async,
     cache,
     loadedScripts = [];
-  
+
   for (i = 0; i < scriptLength; i++) {
     // Check that the script has an href value
     if (typeof deferredScripts[i].href === "string") {
@@ -129,12 +128,15 @@ function loadDeferred() {    // Load deferred scripts. Requires JQuery.
 
 // Create a cookie
 function createCookie(name,value,days) {
+  var date;
+  var expires;
+
   if (days) {
-    var date = new Date();
+    date = new Date();
     date.setTime(date.getTime()+(days*24*60*60*1000));
-    var expires = "; expires="+date.toGMTString();
+    expires = "; expires="+date.toGMTString();
   }
-  else var expires = "";
+  else expires = "";
   document.cookie = name+"="+value+expires+"; path=/";
 }
 
@@ -145,7 +147,7 @@ function readCookie(name) {
   for(var i=0;i < ca.length;i++) {
     var c = ca[i];
     while (c.charAt(0)==' ') c = c.substring(1,c.length);
-    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length,c.length);
   }
   return null;
 }

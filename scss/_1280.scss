@@ -1,6 +1,9 @@
-/* Provides site's basic static styling for a device with a screen size of 1280dp or more */
+﻿/* Provides site's basic static styling for a device with a screen size of 1280dp
+or more */
+
 
 /* Variables */
+
 $margin: 12px;
 //$margin:6px;
 $padding: 12px;
@@ -16,6 +19,7 @@ $side-nav-width: 297px;
 $module-width: 296px;
 $base-font-scale: 115%;
 
+
 /* CSS */
 
 /* General */
@@ -27,19 +31,22 @@ body {
   -webkit-text-size-adjust: 100%; // Prevent iOS from resizing fonts automatically
 }
 
-p, li, tr {
+p,
+li,
+tr {
   max-height: 999999px; // Prevent Android from resizing fonts automatically
 }
 
+
 /* Utilities */
 
-.js .no-js { // Hide anything with the no-js class when JavaScript is enabled
+.js .no-js {  // Hide anything with the no-js class when JavaScript is enabled
   display: none !important;
 }
 
 .js-only {  // Hide anything with the .js-only class...
   display: none !important;
-  .js & {  // ... unless JavaScript is enabled
+  .js & {   // ... unless JavaScript is enabled
     display: block !important;
   }
 }
@@ -50,7 +57,7 @@ p, li, tr {
 
 .svg {  // Hide anything with an svg class by default...
   display: none;
-  .scaled.inlinesvg & {  // ... unless the browser supports inline SVGs and the items have been scaled
+  .scaled.inlinesvg & {    // ... unless the browser supports inline SVGs and the items have been scaled
     display: block;
   }
 }
@@ -65,7 +72,7 @@ p, li, tr {
 
 .screen-reader-text {  // Hide screen reader text by making it very small and hidden outside the visible bounds of the container
   display: block;
-  overflow:hidden;
+  overflow: hidden;
   text-indent: 1280px;
   white-space: nowrap;
   color: transparent;
@@ -83,11 +90,14 @@ p, li, tr {
 /* Reusable elements */
 
 /* Modules */
+
 .module {
   display: block;
 }
 
+
 /* Expanding lists */
+
 ul.concertina {
   list-style: none;
   padding: 0;
@@ -103,7 +113,9 @@ ul.concertina {
   }
 }
 
+
 /* Toggle for expanding lists */
+
 a.concertina {
   display: inline-block;
   width: 12px;
@@ -111,7 +123,7 @@ a.concertina {
   margin-right: 7px;
   background-repeat: no-repeat;
   ul.concertina & {
-    cursor:pointer;
+    cursor: pointer;
     display: block;
     width: auto;
     height: auto;
@@ -121,25 +133,28 @@ a.concertina {
   }
   &.active {
     background-image: url(#{$site-prefix}-contract.png);
-    .scaled.inlinesvg  & {
+    .scaled.inlinesvg & {
       background-image: url(#{$svg-path}#{$site-prefix}-contract.svg);
     }
   }
   &.inactive {
     background-image: url(#{$site-prefix}-expand.png);
-    .scaled.inlinesvg  & {
+    .scaled.inlinesvg & {
       background-image: url(#{$svg-path}#{$site-prefix}-expand.svg);
     }
   }
 }
 
+
 /* Scientific names */
+
 span.scientific-name {
   font-style: italic;
-  &>span {  // Ensure subspecies and variants aren't italicised
+  &>span {    // Ensure subspecies and variants aren't italicised
     font-style: normal;
   }
 }
+
 
 /* Park closure alerts */
 
@@ -147,17 +162,18 @@ span.scientific-name {
   overflow: hidden;
   margin-top: 1em;
   padding: 1em 1em 0.5em 1em;
-
   &.full {
-    background-color:#f8e8e9;
-    h2, a {
-      color:#b51826;
+    background-color: #f8e8e9;
+    h2,
+    a {
+      color: #b51826;
     }
   }
   &.part {
-    background-color:#fef6e8;
-    h2, a {
-      color:#f5a01a;
+    background-color: #fef6e8;
+    h2,
+    a {
+      color: #f5a01a;
     }
   }
   h2 {
@@ -165,7 +181,9 @@ span.scientific-name {
   }
 }
 
+
 /* In-content drop-down menus */
+
 .tab {
   font-weight: bold;
   display: none;
@@ -176,11 +194,11 @@ span.scientific-name {
   .js & {
     display: block;
   }
-  &>ul {  
+  &>ul {
     height: 1.8em;
     border-bottom: solid 1px $main-brand-color/2 + $pale-brand-color/2;
     &>li {
-      background-image: url(/files/0/511/regional-menu-arrow-down.png);
+      background-image: url(#{$shared-image-path}regional-menu-arrow-down.png);
       background-repeat: no-repeat;
       background-position: center right;
       .scaled.inlinesvg & {
@@ -194,31 +212,31 @@ span.scientific-name {
     padding: 0;
     li {
       float: left;
-      position: relative; 
+      position: relative;
       margin: 0 1em 0 0;
       padding: 0 1em 0 0;
       a {
         display: block;
         &.active {
-          .scaled.inlinesvg  & {
+          .scaled.inlinesvg & {
             background-image: url(#{$svg-path}#{$site-prefix}-contract.svg);
           }
         }
         &.inactive {
-          .scaled.inlinesvg  & {
+          .scaled.inlinesvg & {
             background-image: url(#{$svg-path}#{$site-prefix}-expand.svg);
           }
         }
       }
       ul {
-        @include box-shadow(0.2em 1em 1em rgba(0,0,0,0.3));
+        box-shadow: 0.2em 1em 1em rgba(0, 0, 0, 0.3);
         font-weight: normal;
         left: 0;
         width: 16em;
-        overflow:visible;
+        overflow: visible;
         padding: 0.5em;
         background-color: $pale-brand-color;
-        border-collapse:separate;  // Necessary for IE9 to render box shadows
+        border-collapse: separate; // Necessary for IE9 to render box shadows
         border: solid 1px $main-brand-color/2 + $pale-brand-color/2;
         .boxshadow & {
           border: none;
@@ -234,7 +252,7 @@ span.scientific-name {
         position: absolute;
         top: 1.3em;
         left: 0;
-        display:none;
+        display: none;
       }
       .no-touch &:hover .dropdown {
         display: block;
@@ -265,12 +283,14 @@ span.scientific-name {
   }
 }
 
+
 /* Info box for Google Maps */
+
 .gm-style {
   font-size: inherit;
   font-family: inherit;
   img {
-    max-width: none;  // Make sure max width is not applied to Google Maps sprites
+    max-width: none; // Make sure max width is not applied to Google Maps sprites
   }
 }
 
@@ -278,7 +298,7 @@ span.scientific-name {
   a {
     color: $pale-brand-color;
   }
-   .panel {
+  .panel {
     border: none;
     margin-top: 8px;
     margin-bottom: 20px;
@@ -298,9 +318,11 @@ span.scientific-name {
   }
 }
 
+
 /* Page banners */
+
 .banner-container {
-  @include box-shadow(0em 0.6em 1em rgba(0,0,0,0.3));
+  box-shadow: 0em 0.6em 1em rgba(0, 0, 0, 0.3);
   position: relative;
   z-index: 1;
   width: 100%;
@@ -335,7 +357,9 @@ span.scientific-name {
   }
 }
 
+
 /* General navigation menu */
+
 .menu-bar {
   position: relative;
   clear: left;
@@ -351,16 +375,17 @@ span.scientific-name {
     border-style: solid;
     border-width: 0 1px 0 0;
     border-color: $main-brand-color/2 + $pale-brand-color/2;
-    &:hover .dropdown-container, &.focus .dropdown-container { /* Display the dropdown on hover */
-      display:block;
+    &:hover .dropdown-container,
+    &.focus .dropdown-container {  /* Display the dropdown on hover */
+      display: block;
     }
     &.last {
       border-width: 0;
     }
   }
   a {
-    display:block;
-    padding:14px;
+    display: block;
+    padding: 14px;
   }
   &>li>a {
     color: white;
@@ -371,44 +396,47 @@ span.scientific-name {
       font-weight: bold;
     }
   }
-  &>li:hover>a, .dropdown-container {  // Use "background" instead of "background-color" to ensure fallback works in IE7
-  color: $main-brand-color;
-  background: $pale-brand-color;
-  background: rgba($pale-brand-color, 0.95);
+  &>li:hover>a,
+  .dropdown-container { // Use "background" instead of "background-color" to ensure fallback works in IE7
+    color: $main-brand-color;
+    background: $pale-brand-color;
+    background: rgba($pale-brand-color, 0.95);
   }
   .dropdown-container {
-    @include box-shadow(0.2em 1em 1em rgba(0,0,0,0.3));
-    position:absolute;
-    display:none;
-    overflow:visible;
+    box-shadow: 0.2em 1em 1em rgba(0, 0, 0, 0.3);
+    position: absolute;
+    display: none;
+    overflow: visible;
     padding-bottom: 1em;
-    left:-1px;
+    left: -1px;
     width: $menu-width;
-    border-collapse:separate;  // Necessary for IE9 to render box shadows
+    border-collapse: separate; // Necessary for IE9 to render box shadows
     border: solid 1px;
     border-top-width: 0;
     .boxshadow & {
       border: none;
     }
-    ul{
-      list-style:none;
-      margin:0;
-      padding:0;
-      position:relative;
-      height:100%;
-      left:0;
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      height: 100%;
+      left: 0;
       &>li {
-        position:relative;
-        float:none;
-        border-style:none;
-        background:none;
+        position: relative;
+        float: none;
+        border-style: none;
+        background: none;
       }
     }
   }
+
   .last>.dropdown-container {
     left: auto;
     right: -1px;
   }
+
   .dropdown-column {
     float: left;
     margin-left: 1em;
@@ -418,10 +446,12 @@ span.scientific-name {
       margin-left: ($menu-width - 3)/2 + 2em;
       margin-right: -100%;
     }
-    &>ul>li>a { /* Menu headings */
+
+    &>ul>li>a {
+      /* Menu headings */
       font-weight: bold;
-      margin-top:1em;
-      margin-bottom:0.5em;
+      margin-top: 1em;
+      margin-bottom: 0.5em;
       padding: 0.5em;
       color: white;
       background: $main-brand-color;
@@ -430,15 +460,20 @@ span.scientific-name {
         background: $main-brand-color;
       }
     }
-    &>ul>li>ul>li>a { /* Menu subheadings */
+
+    &>ul>li>ul>li>a {
+      /* Menu subheadings */
       color: $body-text-color;
-      margin:0;
-      padding:0.2em 0 0.2em 0.5em;
+      margin: 0;
+      padding: 0.2em 0 0.2em 0.5em;
     }
+
   }
 }
 
+
 /* Landing page modules */
+
 .landing .module {
   width: $four-column-module-width - 2 * $padding;
   margin-left: $margin;
@@ -446,7 +481,7 @@ span.scientific-name {
   padding: $padding;
   float: left;
   position: relative;
-  z-index: 1;  // Set the z-index to make sure standard modules are positioned above the feature or promotion modules
+  z-index: 1; // Set the z-index to make sure standard modules are positioned above the feature or promotion modules
   overflow: hidden;
   h2 {
     font-size: 150%;
@@ -454,7 +489,8 @@ span.scientific-name {
   p a {
     color: $body-text-color;
   }
-  &.mid, &.small {
+  &.mid,
+  &.small {
     float: left;
     &.first {
       clear: left;
@@ -464,34 +500,37 @@ span.scientific-name {
     }
   }
   &.mid {
-    @include background-size(100%);
     height: 194px;
     background-color: $pale-brand-color;
     background-position: top;
     background-repeat: no-repeat;
-    &.lg {  // Larger image-base module; only includes headline
-      @include background-size(cover);
+    background-size: 100%;
+    p {
+      color: $body-text-color;
+    }
+    &.lg { // Larger image-base module; only includes headline
       padding: 0;
       height: 218px;
       width: $four-column-module-width;
       background-position: center;
       background-repeat: no-repeat;
       background-color: transparent;
+      background-size: cover;
       h2 {
         position: absolute;
         display: inline-block;
-        width:100%;
+        width: 100%;
         margin: 0;
         padding: 0.5em 0.5em 0.5em 0.75em;
-        bottom:0px;
-        color:white;
+        bottom: 0px;
+        color: white;
         font-weight: normal;
         white-space: nowrap;
         box-sizing: border-box;
-        background-image: url('/files/0/511/lg-module-background.png');
+        background-image: url('#{$shared-image-path}lg-module-background.png');
         .rgba & {
           background-image: none;
-          background-color: rgba(0,0,0,0.75);
+          background-color: rgba(0, 0, 0, 0.75);
         }
       }
     }
@@ -500,22 +539,22 @@ span.scientific-name {
       white-space: nowrap;
     }
     &.first {
-      @include border-top-left-radius(5%);
+      border-top-left-radius: 5%;
       &.lg {
-        @include border-top-left-radius(0);
+        border-top-left-radius: 0;
       }
     }
     &.last {
-      @include border-top-right-radius(5%);
+      border-top-right-radius: 5%;
       &.lg {
-        @include border-top-right-radius(0);
+        border-top-right-radius: 0;
       }
     }
     &.list {
-      @include background-size(auto 43px);
       background-image: url(#{$site-prefix}-module-header-news.png);
       background-position: top right;
       background-repeat: no-repeat;
+      background-size: auto 43px;
       .scaled.inlinesvg & {
         background-image: url(#{$svg-path}#{$site-prefix}-module-header-news.svg);
       }
@@ -532,7 +571,8 @@ span.scientific-name {
     &.extra-space {
       margin-top: 2*$margin;
     }
-    h2, p {
+    h2,
+    p {
       margin: 0 0 0 71px + $padding;
     }
     h2 {
@@ -544,27 +584,27 @@ span.scientific-name {
       font-size: 90%;
     }
     .overlay {
-      @include background-size(auto 100%);
-      @include border-radius(40%);
-      @include border-top-left-radius(0);
+      border-radius: 40%;
+      border-top-left-radius: 0;
       width: 71px;
       height: 71px;
       overflow: hidden;
       float: left;
       margin-right: $padding;
       background-repeat: no-repeat;
-      
+      background-size: auto 100%;
     }
     &.first .overlay {
-        @include border-top-left-radius(40%);
-        @include border-bottom-left-radius(0);
-      }
+      border-top-left-radius: 40%;
+      border-bottom-left-radius: 0;
+    }
     &.last .overlay {
-        @include border-top-left-radius(40%);
-        @include border-top-right-radius(0);
-      }
-  }   
-  &.icon, &#i-want-to {
+      border-top-left-radius: 40%;
+      border-top-right-radius: 0;
+    }
+  }
+  &.icon,
+  &#i-want-to {
     float: none;
     clear: right;
   }
@@ -589,15 +629,13 @@ span.scientific-name {
       line-height: 100%;
     }
   }
-  
-  
-    &.shortIcon {
+  &.shortIcon {
     height: 2.8em;
     border-top: solid 1px $main-brand-color/2 + $pale-brand-color/2;
     background-position: left center;
     background-repeat: no-repeat;
     margin-top: 0;
-    float:left;
+    float: left;
     &.primary.first {
       border-top: none;
     }
@@ -616,10 +654,8 @@ span.scientific-name {
       line-height: 100%;
     }
   }
-  
-  
   &.promotion {
-    width: $four-column-module-width - 2 * $padding + $margin;  // Incorporate the right-hand margin into the width so the image is flush with the container
+    width: $four-column-module-width - 2 * $padding + $margin; // Incorporate the right-hand margin into the width so the image is flush with the container
     height: auto;
     min-height: 140px;
     margin-right: 0;
@@ -629,14 +665,17 @@ span.scientific-name {
     right: 0;
     bottom: 0;
     z-index: 0;
-    h2, p, blockquote {
+    h2,
+    p,
+    blockquote {
       position: relative;
       width: 58%;
       &.manual-line-breaks {
         width: auto;
       }
     }
-    p, blockquote {
+    p,
+    blockquote {
       margin: 0.5em 0 1em 0;
     }
     p {
@@ -654,7 +693,6 @@ span.scientific-name {
       }
     }
     .profile {
-      @include background-size(contain);
       position: absolute;
       height: 140px;
       width: 100%;
@@ -662,6 +700,7 @@ span.scientific-name {
       right: 0;
       background-position: bottom right;
       background-repeat: no-repeat;
+      background-size: contain;
     }
   }
   h2 {
@@ -670,27 +709,30 @@ span.scientific-name {
 }
 
 // Homepage feature panel
-#feature{
-  height:325px;
+#feature {
+  height: 325px;
   background-color: #999999;
   z-index: 0;
   color: white;
-  h2, a {
-    color:white;
+  h2,
+  a,
+  p {
+    color: white;
   }
-  h2, p {
+  h2,
+  p {
     width: auto;
   }
   img {
-    position:absolute;
-    bottom:0px;
-    right:0px;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
   }
 }
 
 
-
 /* Content page modules */
+
 .content .module {
   position: relative;
   overflow: hidden;
@@ -711,7 +753,6 @@ span.scientific-name {
     }
   }
   a.toggle {
-    @include background-size(auto 100%);
     position: absolute;
     right: 0;
     bottom: 12px;
@@ -719,15 +760,16 @@ span.scientific-name {
     width: 12px;
     height: 12px;
     background-repeat: no-repeat;
+    background-size: auto 100%;
     &.active {
       background-image: url(#{$site-prefix}-contract.png);
-      .scaled.inlinesvg  & {
+      .scaled.inlinesvg & {
         background-image: url(#{$svg-path}#{$site-prefix}-contract.svg);
       }
     }
     &.inactive {
       background-image: url(#{$site-prefix}-expand.png);
-      .scaled.inlinesvg  & {
+      .scaled.inlinesvg & {
         background-image: url(#{$svg-path}#{$site-prefix}-expand.svg);
       }
     }
@@ -756,7 +798,9 @@ span.scientific-name {
   }
 }
 
+
 /* "While you are here" listing */
+
 .module.actions {
   width: $four-column-module-width - 2*$padding;
   float: left;
@@ -782,24 +826,30 @@ span.scientific-name {
         color: $body-text-color;
       }
       .scaled.inlinesvg & {
-         background-image: url(#{$svg-path}#{$site-prefix}-nav-arrow-right.svg);
+        background-image: url(#{$svg-path}#{$site-prefix}-nav-arrow-right.svg);
       }
     }
   }
 }
 
+
 /* Campground and native species formatting */
+
 .campground {
   h3 {
     margin-top: 1em;
     margin-bottom: 0;
   }
 }
-.species, .campsite {
+
+.species,
+.campsite {
   float: left;
   width: $content-width - 128px - $padding;
 }
-img.species, img.campsite {
+
+img.species,
+img.campsite {
   margin: 1em 0;
   padding-right: $padding;
   width: 128px;
@@ -809,26 +859,34 @@ img.species, img.campsite {
 
 /* Specific elements */
 
+
 /* Page container */
+
 #container {
   width: $page-width;
   margin-left: auto;
   margin-right: auto;
   padding: 0 12px 12px 12px;
-  font-size: $base-font-scale;  
+  font-size: $base-font-scale;
   line-height: 120%;
-  .multiplebgs & {  // Add the background shadows for browsers that support it
-    @include background-size(auto 67px, auto 67px, 24px 100%, 24px 100%);
-    background-image: url(/files/0/511/regional-footer-shadow-left.png), url(/files/0/511/regional-footer-shadow-right.png), url(/files/0/511/regional-footer-shadow-top-left.png), url(/files/0/511/regional-footer-shadow-top-right.png);
+  .multiplebgs & { // Add the background shadows for browsers that support it
+    background-image: url(#{$shared-image-path}regional-footer-shadow-left.png),
+    url(#{$shared-image-path}regional-footer-shadow-right.png),
+    url(#{$shared-image-path}regional-footer-shadow-top-left.png),
+    url(#{$shared-image-path}regional-footer-shadow-top-right.png);
     background-position: bottom left, bottom right, left, right;
     background-repeat: no-repeat, no-repeat, repeat-y, repeat-y;
+    background-size: auto 67px, auto 67px, 24px 100%, 24px 100%;
   }
-  .light {background-color: $mid-brand-color !important;}  
+  .light {
+    background-color: $mid-brand-color !important;
+  }
 }
 
+
 /* Site header */
+
 #header {
-  @include background-size(auto 100%);
   position: relative;
   width: 100%;
   height: $header-height;
@@ -837,13 +895,13 @@ img.species, img.campsite {
   background-image: $header-background-image;
   background-position: $header-background-position;
   background-repeat: no-repeat;
-  @if $header-background-svg != $header-background-image {
+  background-size: auto 100%;
+  @if $header-background-svg !=$header-background-image {
     .scaled.inlinesvg & {
       background-image: $header-background-svg;
     }
   }
   h1 {
-    @include background-size(auto 100%);
     margin: 0;
     padding: 0;
     display: block;
@@ -852,7 +910,8 @@ img.species, img.campsite {
     background-image: $header-logotype-image;
     background-position: top left;
     background-repeat: no-repeat;
-    @if $header-logotype-svg != $header-logotype-image {
+    background-size: auto 100%;
+    @if $header-logotype-svg !=$header-logotype-image {
       .scaled.inlinesvg & {
         background-image: $header-logotype-svg;
       }
@@ -867,7 +926,7 @@ img.species, img.campsite {
   }
   ul {
     @if $header-text-opacity {
-      @include opacity($header-text-opacity);
+      opacity: $header-text-opacity;
     }
     position: absolute;
     bottom: 0;
@@ -881,12 +940,26 @@ img.species, img.campsite {
       margin-left: 0.4em;
       float: left;
       color: $header-text-color;
-      &+li {
+      // &+li {
+      //   @mixin before {
+      //     display: block;
+      //     float: left;
+      //     content: "|";
+      //     margin-right: 0.4em;
+      //   }
+      //   &:before {
+      //     @include before;
+      //   }
+      //   &::before {
+      //     @include before;
+      //   }
+      // }
+      &:nth-of-type(+2) {
         @mixin before {
           display: block;
           float: left;
           content: "|";
-          margin-right: 0.4em;
+          //margin-right: 0.4em;  //FireFox fix 1 for social-media icon.
         }
         &:before {
           @include before;
@@ -895,6 +968,9 @@ img.species, img.campsite {
           @include before;
         }
       }
+      &:nth-of-type(+2) a {  //FireFox fix 2 for social-media icon.
+        margin: 0 0 0 0.5em;
+      }
       a {
         color: $header-text-color;
         font-weight: bold;
@@ -902,7 +978,12 @@ img.species, img.campsite {
           width: 2em;
           background-position: center;
           background-repeat: no-repeat;
-          @each $channel in facebook, twitter, youtube, instagram {
+          @each $channel in facebook,
+          twitter,
+          youtube,
+          instagram,
+          flickr,
+          subscribe {
             &.#{$channel} {
               background-image: url(#{$site-prefix}-#{$channel}.png);
               .scaled.inlinesvg & {
@@ -916,14 +997,16 @@ img.species, img.campsite {
   }
 }
 
+
 /* Main navigation menu and search bar */
+
 #menu {
   position: relative;
-  z-index: 3 ;
+  z-index: 3;
   width: 100%;
   height: 41px;
   background-color: $main-brand-color;
-  background-image: url(/files/0/511/regional-menu-background.png);
+  background-image: url(#{$shared-image-path}regional-menu-background.png);
   background-repeat: repeat-x;
   form {
     position: absolute;
@@ -934,9 +1017,7 @@ img.species, img.campsite {
     padding: 0;
     border: none;
     input[type=text] {
-      @include background-size(auto);
-      @include border-radius(0);
-      @include border-bottom-left-radius(10% 50%);
+      border-radius: 0 0 0 10% / 0 0 0 50%;
       position: absolute;
       font-size: 100%;
       font-style: italic;
@@ -949,19 +1030,20 @@ img.species, img.campsite {
       padding: 14px 1em;
       margin: 0;
       background-color: $pale-brand-color;
-      background-image: url(/files/0/511/regional-menu-background.png);
+      background-image: url(#{$shared-image-path}regional-menu-background.png);
       background-position: right;
+      background-size: auto;
       &.active {
         font-style: inherit;
         color: inherit;
       }
-      &.dark{
+      &.dark {
         background-color: $dark-brand-color;
-        color:$pale-brand-color;
+        color: $pale-brand-color;
       }
     }
     input[type=submit] {
-      cursor:pointer;
+      cursor: pointer;
       position: absolute;
       top: 0;
       right: 0;
@@ -980,17 +1062,21 @@ img.species, img.campsite {
   }
 }
 
-#menu-toggle {  // Mobile menu toggle
+#menu-toggle { // Mobile menu toggle
   display: none;
 }
 
+
 /* Seamless's mainForm container */
+
 #mainForm {
   margin: 0;
   padding: 0;
 }
 
+
 /* The page's dynamic content */
+
 #main {
   width: 100%;
   min-height: 30em;
@@ -1006,7 +1092,8 @@ img.species, img.campsite {
     }
     .module {
       text-decoration: none;
-      h2, p {
+      h2,
+      p {
         &:hover {
           text-decoration: underline;
         }
@@ -1018,7 +1105,9 @@ img.species, img.campsite {
   }
 }
 
+
 /* Spotlight modules */
+
 #spotlight {
   position: relative;
   height: $spotlight-height;
@@ -1030,7 +1119,9 @@ img.species, img.campsite {
     width: $page-width;
     margin: 0.5*$padding 0 0 0;
     float: none;
-    h2, p, ol {
+    h2,
+    p,
+    ol {
       margin-left: 2*$padding;
     }
     h2 {
@@ -1040,26 +1131,27 @@ img.species, img.campsite {
     p {
       width: 28%;
     }
-    .item .overlay {  // The background images for the wide spotlight
+    .item .overlay { // The background images for the wide spotlight
       height: 275px;
       width: 1000px;
-      &.right {  // The user-defined spotlight background image
-        @include border-top-right-radius(0);
-        @include border-bottom-right-radius(0);
+      &.right { // The user-defined spotlight background image
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
       }
     }
   }
-  h2, p {
+  h2,
+  p {
     width: 32.5%;
-    position:relative;
+    position: relative;
     margin: $padding;
   }
   h2 {
-    font-size:230%;
+    font-size: 230%;
     line-height: 100%;
   }
   p {
-    font-size:130%;
+    font-size: 130%;
     line-height: 150%;
   }
   ol {
@@ -1083,9 +1175,9 @@ img.species, img.campsite {
         height: 1.2em;
         background-color: transparent;
         &.highlight a {
-            padding: 0;
-            background-color: transparent;
-            border-color: $main-brand-color;
+          padding: 0;
+          background-color: transparent;
+          border-color: $main-brand-color;
         }
         a {
           border: solid 0.1em transparent;
@@ -1102,7 +1194,7 @@ img.species, img.campsite {
         background-color: $main-brand-color;
       }
       a {
-        @include border-radius(50%);
+        border-radius: 50%;
         display: block;
         width: 1em;
         height: 1em;
@@ -1115,53 +1207,55 @@ img.species, img.campsite {
       }
     }
   }
-  .item {  // The container for each individual spotlight entry
+  .item { // The container for each individual spotlight entry
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     &.active {
-      @include opacity(0);
+      opacity: 0;
     }
-    &.template {  // Template entries are used to create active ones
+    &.template { // Template entries are used to create active ones
       width: 0;
       height: 0;
       overflow: hidden;
     }
-    .overlay {  // The background images for the spotlight
+    .overlay { // The background images for the spotlight
       position: absolute;
       height: 275px;
       width: 579px;
       top: 0;
-      &.left {  // The generic spotlight background image
-        @include background-size(auto 101%);
+      &.left { // The generic spotlight background image
         left: 0;
         background-image: url(#{$site-prefix}-spotlight-overlay.png);
         background-repeat: no-repeat;
+        background-size: auto 101%;
         .scaled.inlinesvg & {
           background-image: url(#{$svg-path}#{$site-prefix}-spotlight-overlay.svg);
         }
       }
-      &.right {  // The user-defined spotlight background image
-        @include background-size(cover);
-        @include border-bottom-right-radius((275/579) * 5% 5%);
-        @include border-top-right-radius((275/579) * 1.5% 1.5%);
+      &.right { // The user-defined spotlight background image
+        border-bottom-right-radius: (275/579) * 5% 5%;
+        border-top-right-radius: (275/579) * 1.5% 1.5%;
         right: 0;
         background-repeat: no-repeat;
+        background-size: cover;
       }
     }
   }
 }
 
+
 /* "I want to" listing */
+
 #i-want-to {
   height: $spotlight-height;
   width: $four-column-module-width;
   padding: 0;
-  &.short{
-    height:90px;
-    overflow:hidden;
+  &.short {
+    height: 90px;
+    overflow: hidden;
   }
   h2 {
     margin-top: 0;
@@ -1181,14 +1275,17 @@ img.species, img.campsite {
         color: $body-text-color;
       }
       .scaled.inlinesvg & {
-         background-image: url(#{$svg-path}#{$site-prefix}-nav-arrow-right.svg);
+        background-image: url(#{$svg-path}#{$site-prefix}-nav-arrow-right.svg);
       }
     }
   }
 }
 
+
 /* Breadcrumbs and general page content */
-#breadcrumbs, #content {
+
+#breadcrumbs,
+#content {
   float: right;
   clear: right;
   width: $content-width;
@@ -1205,28 +1302,38 @@ img.species, img.campsite {
   }
 }
 
+  /* css for no righthand column */
+.main__group>#breadcrumbs,
+.main__group>#content {
+  float: right;
+  clear: right;
+  width: 888px;
+  padding: 0;
+  margin: $padding $padding $padding -100%;
+}
+
 #breadcrumbs {
   margin-bottom: 0;
   a {
     font-weight: normal;
   }
-  #navigation-toggle {  // Define the navigation toggle here (even though it's not displayed) to keep the CSS simpler
-    @include background-size(auto 0.87em);
+  #navigation-toggle { // Define the navigation toggle here (even though it's not displayed) to keep the CSS simpler
     display: none;
     text-decoration: none;
     margin-right: 0.5em;
     padding-left: 1.5em;
     background-repeat: no-repeat;
     background-position: 0 0.25em;
+    background-size: auto 0.87em;
     &.active {
       background-image: url(#{$site-prefix}-contract.png);
-      .scaled.inlinesvg  & {
+      .scaled.inlinesvg & {
         background-image: url(#{$svg-path}#{$site-prefix}-contract.svg);
       }
     }
     &.inactive {
       background-image: url(#{$site-prefix}-expand.png);
-      .scaled.inlinesvg  & {
+      .scaled.inlinesvg & {
         background-image: url(#{$svg-path}#{$site-prefix}-expand.svg);
       }
     }
@@ -1240,15 +1347,21 @@ img.species, img.campsite {
 }
 
 #content {
-  h1, h2, h3, hr {
+  h1,
+  h2,
+  h3,
+  hr {
     clear: both;
   }
-  h1, h2 {
+  h1,
+  h2 {
     strong {
       font-weight: normal;
     }
   }
-  table, td, th {
+  table,
+  td,
+  th {
     border-style: solid;
     border-width: 1px;
     border-color: $pale-brand-color;
@@ -1267,7 +1380,8 @@ img.species, img.campsite {
   .noBorderTable {
     margin: 0;
     border: none;
-    td, th {
+    td,
+    th {
       padding: 0;
       border: none;
     }
@@ -1278,7 +1392,8 @@ img.species, img.campsite {
       margin: $margin 0;
       overflow: hidden;
       clear: both;
-      a, div.error { // anchor tags used by Seamless' native forms to display errors; "error" class divs used for JavaScript-enabled third-part forms
+      a,
+      div.error { // anchor tags used by Seamless' native forms to display errors; "error" class divs used for JavaScript-enabled third-part forms
         color: #f00000;
         font-weight: bold;
         text-decoration: none;
@@ -1289,7 +1404,8 @@ img.species, img.campsite {
       div.error { // Hide by default; show dynamically as required using JavaScript
         display: none;
       }
-      &>label, &>span {
+      &>label,
+      &>span {
         margin: 0 -100% 0 0;
         padding: 0;
         display: block;
@@ -1303,7 +1419,9 @@ img.species, img.campsite {
       img {
         border: 1px solid grey !important;
       }
-      input[type=text], input[type=file] {
+      input[type=text],
+      input[type=email],
+      input[type=file] {
         margin: 0 0 0 30%;
         display: block;
         width: 65%;
@@ -1327,11 +1445,14 @@ img.species, img.campsite {
         max-width: 65%;
         float: left;
       }
-      table, th, td {
+      table,
+      th,
+      td {
         border: none;
         padding: 0;
       }
-      table {
+      table,
+      .checkbox-group {
         margin: 0 -100% 0 30%;
         display: block;
         width: 65%;
@@ -1348,7 +1469,9 @@ img.species, img.campsite {
   }
 }
 
+
 /* Secondary navigation menu */
+
 #navigation {
   float: left;
   width: $side-nav-width - 2 * $padding;
@@ -1373,13 +1496,15 @@ img.species, img.campsite {
         }
       }
       .scaled.inlinesvg & {
-         background-image: url(#{$svg-path}#{$site-prefix}-nav-arrow-right.svg);
+        background-image: url(#{$svg-path}#{$site-prefix}-nav-arrow-right.svg);
       }
     }
   }
 }
 
+
 /* Location module, used to show a Google Map with a single marker */
+
 #location {
   display: none;
   &.active {
@@ -1393,7 +1518,9 @@ img.species, img.campsite {
   }
 }
 
+
 /* Image gallery module */
+
 #image-gallery {
   a {
     display: block;
@@ -1410,11 +1537,15 @@ img.species, img.campsite {
   }
 }
 
-/* Persistent modules */ 
-#find-us, #catalogue, #orders {
+
+/* Persistent modules */
+
+#find-us,
+#catalogue,
+#orders {
   background-repeat: no-repeat;
   .scaled & {
-    @include background-size(auto 100%);
+    background-size: auto 100%;
   }
   h2 {
     margin-left: 30%;
@@ -1422,9 +1553,10 @@ img.species, img.campsite {
 }
 
 #find-us {
-  background-image: url(#{$site-prefix}-icon-#{if($find-us-icon, $find-us-icon, location)}.png);
+  $icon-type: if($find-us-icon, $find-us-icon, location);
+  background-image: url(#{$site-prefix}-icon-#{$icon-type}.png);
   .scaled.inlinesvg & {
-    background-image: url(#{$svg-path}#{$site-prefix}-icon-#{if($find-us-icon, $find-us-icon, location)}.svg);
+    background-image: url(#{$svg-path}#{$site-prefix}-icon-#{$icon-type}.svg);
   }
 }
 
@@ -1444,11 +1576,12 @@ img.species, img.campsite {
 
 
 /* The container for large interactive Google Maps */
+
 #map-container {
   #map-list {
     h2 {
-    clear: none;
-  }
+      clear: none;
+    }
     ul {
       margin: 0;
       padding: 0;
@@ -1468,9 +1601,10 @@ img.species, img.campsite {
   }
 }
 
+
 /* Bottom of page "sitemap" */
+
 #sitemap {
-  @include background-size(auto 100%);
   width: 100%;
   position: relative;
   overflow: hidden;
@@ -1478,8 +1612,8 @@ img.species, img.campsite {
   background-image: $sitemap-background-image;
   background-position: left top;
   background-repeat: no-repeat;
+  background-size: auto 100%;
   .logotype {
-    @include background-size(contain);
     position: absolute;
     top: 0;
     left: 0;
@@ -1492,15 +1626,16 @@ img.species, img.campsite {
     background-image: $header-logotype-image;
     background-position: top left;
     background-repeat: no-repeat;
+    background-size: contain;
     &.reverse {
       background-image: $header-reverse-logotype-image;
-      @if $header-reverse-logotype-svg != $header-reverse-logotype-image OR $header-logotype-svg != $header-logotype-image {
+      @if $header-reverse-logotype-svg !=$header-reverse-logotype-image OR $header-logotype-svg !=$header-logotype-image {
         .scaled.inlinesvg & {
           background-image: $header-reverse-logotype-svg;
         }
       }
     }
-    @if $header-logotype-svg != $header-logotype-image {
+    @if $header-logotype-svg !=$header-logotype-image {
       .scaled.inlinesvg & {
         background-image: $header-logotype-svg;
       }
@@ -1513,7 +1648,7 @@ img.species, img.campsite {
       font-size: 0;
     }
   }
-  @if $sitemap-background-svg != $sitemap-background-image {
+  @if $sitemap-background-svg !=$sitemap-background-image {
     .scaled.inlinesvg & {
       background-image: $sitemap-background-svg;
     }
@@ -1541,8 +1676,7 @@ img.species, img.campsite {
         .rgba & {
           border-left-color: rgba($main-brand-color/2 + $pale-brand-color/2, 0.3);
         }
-        &.white{
-          //border-left-color: white !important;
+        &.white { //border-left-color: white !important;
           border-left-color: $pale-brand-color !important;
         }
         &>ul {
@@ -1564,7 +1698,9 @@ img.species, img.campsite {
   }
 }
 
+
 /* Site footer, including government logos and disclaimers */
+
 #footer {
   position: relative;
   overflow: hidden;
@@ -1572,7 +1708,7 @@ img.species, img.campsite {
     font-size: 75%;
     margin: 0.4em 1em;
     //color: $pale-brand-color;
-    color : white;
+    color: white;
     &.switch {
       position: absolute;
       right: 0;
@@ -1583,12 +1719,13 @@ img.species, img.campsite {
       color: white;
     }
   }
-  .logos, .spacer {
-    @include background-size(auto 100%);
+  .logos,
+  .spacer {
     float: left;
     height: 55px;
     margin-right: -100%;
     background-repeat: no-repeat;
+    background-size: auto 100%;
   }
   .logos {
     background-image: url(#{$site-prefix}-footer-background-left.png);
@@ -1599,41 +1736,43 @@ img.species, img.campsite {
       background-image: url(#{$svg-path}#{$site-prefix}-footer-background-left.svg);
     }
     a {
-      @include background-size(contain);
-      float:left;
+      float: left;
       margin-left: 2.5em;
       height: inherit;
       background-repeat: no-repeat;
+      background-size: contain;
       &.gosa {
         width: 132px;
-        background-image: url(/files/0/511/regional-footer-gosa.png);
+        background-image: url(#{$shared-image-path}regional-footer-gosa.png);
         .scaled.inlinesvg & {
           background-image: url(#{$svg-path}regional-footer-gosa.svg);
         }
       }
       &.south-australia {
         width: 123px;
-        background-image: url(/files/0/511/regional-footer-south-australia.png);
+        background-image: url(#{$shared-image-path}regional-footer-south-australia.png);
         .scaled.inlinesvg & {
           background-image: url(#{$svg-path}regional-footer-south-australia.svg);
         }
       }
       &.sagovau {
         width: 120px;
-        background-image: url(/files/0/511/regional-footer-sagovau.png);
+        background-image: url(#{$shared-image-path}regional-footer-sagovau.png);
         .scaled.inlinesvg & {
           background-image: url(#{$svg-path}regional-footer-sagovau.svg);
         }
       }
     }
     .multiplebgs & {
-      @include background-size(auto, auto 100%);
-      background-image: url(/files/0/511/regional-menu-shadow.png), url(#{$site-prefix}-footer-background-left.png);
+      background-image: url(#{$shared-image-path}regional-menu-shadow.png),
+      url(#{$site-prefix}-footer-background-left.png);
       background-position: top, left;
       background-repeat: repeat-x, no-repeat;
+      background-size: auto, auto 100%;
     }
     .scaled.inlinesvg.multiplebgs & {
-      background-image: url(/files/0/511/regional-menu-shadow.png), url(#{$svg-path}#{$site-prefix}-footer-background-left.svg);
+      background-image: url(#{$shared-image-path}regional-menu-shadow.png),
+      url(#{$svg-path}#{$site-prefix}-footer-background-left.svg);
     }
   }
   .spacer {
@@ -1644,13 +1783,15 @@ img.species, img.campsite {
       background-image: url(#{$svg-path}#{$site-prefix}-footer-background-right.svg);
     }
     .multiplebgs & {
-      @include background-size(auto, auto 100%);
-      background-image: url(/files/0/511/regional-menu-shadow.png), url(#{$site-prefix}-footer-background-right.png);
+      background-image: url(#{$shared-image-path}regional-menu-shadow.png),
+      url(#{$site-prefix}-footer-background-right.png);
       background-position: top, right;
       background-repeat: repeat-x, no-repeat;
+      background-size: auto, auto 100%;
     }
     .scaled.inlinesvg.multiplebgs & {
-      background-image: url(/files/0/511/regional-menu-shadow.png), url(#{$svg-path}#{$site-prefix}-footer-background-right.svg);
+      background-image: url(#{$shared-image-path}regional-menu-shadow.png),
+      url(#{$svg-path}#{$site-prefix}-footer-background-right.svg);
     }
   }
   .disclaimer {

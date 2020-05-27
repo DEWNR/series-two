@@ -30,7 +30,7 @@ $module-width: 25%;
 
 /* Expanding lists */
 .breakpoint-large a.concertina {
-  @include background-size(auto 100%);
+  background-size: auto 100%;
   width: 0.87em;
   height: 0.87em;
   margin-right: 0.5em;
@@ -38,7 +38,7 @@ $module-width: 25%;
 
 /* Toggle for expanding lists */
 .breakpoint-large.js ul.concertina a.concertina {
-  @include background-size(auto 0.87em);
+  background-size: auto 0.87em;
 }
 
 /* In-content drop-down menus */
@@ -46,7 +46,7 @@ $module-width: 25%;
   ul {
     li {
       a {
-        @include background-size(auto 0.87em);
+        background-size: auto 0.87em;
       }
     }
   }
@@ -84,7 +84,7 @@ $module-width: 25%;
     height: 0;
     padding-bottom: 15.1em;
     &.list {
-      @include background-size(auto 3.1em);
+      background-size: auto 3.1em;
       h2 {
         margin-top: auto;
       }
@@ -113,7 +113,7 @@ $module-width: 25%;
     }
   }
   &.icon {
-    @include background-size(auto 88%);
+    background-size: auto 88%;
     margin-top: 0;
     &.primary {
       margin-left: 3* $four-column-module-width + 4 * $margin;
@@ -150,7 +150,7 @@ $module-width: 25%;
   }
   ul {
     li {
-      @include background-size(auto 0.87em);
+      background-size: auto 0.87em;
     }
   }
 }
@@ -173,7 +173,7 @@ $module-width: 25%;
   padding: 0 0 $padding 0;
   margin: 0 -100% 0 ($side-nav-width + $content-width + $padding);
   &.navigation {
-    @include background-size(auto 100%);
+    background-size: auto 100%;
     width: $three-column-module-width - 2 * $padding - 12.91%;
     height: 10em;
     padding: $padding $padding $padding ($padding + 12.91%);
@@ -231,7 +231,7 @@ $module-width: 25%;
 }
 
 .breakpoint-large.multiplebgs #container {
-  @include background-size(auto 4.894em, auto 4.894em, 1.79em 100%, 1.79em 100%);
+  background-size: auto 4.894em, auto 4.894em, 1.79em 100%, 1.79em 100%;
 }
 
 /* Site header */
@@ -266,7 +266,7 @@ $module-width: 25%;
       padding: 0 1em;  
     }
     input[type=submit] {
-      @include background-size(100%);
+      background-size: 100%;
       width: 3em;
       height: 3em;
     }
@@ -323,7 +323,7 @@ $module-width: 25%;
     margin-left: 3* $four-column-module-width + 4 * $margin;
     ul {
       li {
-        @include background-size(auto 0.87em);
+        background-size: auto 0.87em;
       }
     }
   }
@@ -359,7 +359,7 @@ $module-width: 25%;
   padding: $padding;
   ul {
     li {
-      @include background-size(auto 0.87em);
+      background-size: auto 0.87em;
     }
   }
 }

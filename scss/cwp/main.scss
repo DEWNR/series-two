@@ -1,10 +1,13 @@
 /* Combine the site-specific variables with the styles for site.css file */
 
-@import "../_global.scss";      // Import the global variables
-@import "_site.scss";           // Import the site-specific variables - must be done after global variables
-@import "../_defaults.scss";    // Import the default variables - must be done after site and global variables have been imported
-@import "../_style.scss";       // Import the basic styles
-@import "../_1280.scss";        // Import the styles for screens 1280px or larger
-@import "../_1279.scss";        // Import additional styles for screens 1279px or less
-@import "../_1024.scss";        // Import additional styles for screens 1024px or less
-@import "../_640.scss";         // Import additional styles for screens 640px or less
+@import "../global";      // Import the global variables
+@import "site";           // Import the site-specific variables - must be done after global variables
+@import "../defaults";    // Import the default variables - must be done after site and global variables have been imported
+@import "../style";       // Import the basic styles
+@import "../1280";        // Import the styles for screens 1280px or larger
+@import "../1279";        // Import additional styles for screens 1279px or less
+@import "../1024";        // Import additional styles for screens 1024px or less
+@import "../640";         // Import additional styles for screens 640px or less
+@import "../component.curator";
+
+.some-class {color: #000;}

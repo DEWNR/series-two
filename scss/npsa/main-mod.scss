@@ -1,0 +1,265 @@
+@import "_fancybox.scss";
+@import "_fancybox-thumbs.scss";
+@import "_forms.scss";
+
+.announcement  {
+    margin: 12px 0;
+    padding: 12px;
+
+    *:first-child {
+        margin-top: 0;
+    }
+
+    *:last-child {
+        margin-bottom: 0;
+    }
+}
+
+
+.fixed-aspect-ratio{
+    height: 0;
+    padding: 0;
+    position: relative;
+    width: 100%;
+
+    &--2x1{
+        padding-bottom: 50%;
+    }
+
+    &--16x9 {
+        padding-bottom: 56.25%;
+    }
+
+    &--4x3 {
+        padding-bottom:75%;
+    }
+
+    &__content {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        width: 100%;
+    }
+}
+
+#content.content__fullwidth {
+    float: none;
+    width: auto;
+    padding: 40px 20px 0;
+    margin: 0;
+}
+
+/* style predictive search - start */
+#searchKeyword {
+    font-size: 12px;
+}
+#menu form input[type=submit] {
+    background-color: #d1e0d3;
+}
+.breakpoint-small #menu form input[type=submit] {
+    background-color: transparent;
+}
+
+.autocomplete-suggestions {
+    background-color: #d1e0d3;
+    padding: 0.5em 0em 1em 0em;
+    border-bottom-left-radius: 1em 1em;
+    max-width: 222px;
+    overflow: hidden;
+
+    .breakpoint-medium & {
+        max-width: 100%;
+        width: 86.4% !important;
+    }
+
+    &.render {
+        max-width: 87.6%;
+    }
+}
+
+
+.autocomplete-suggestion {
+    list-style: none;
+    color: #555;
+    font-size: 1.1em;
+    line-height: 1.7em;
+    padding-left: 0.6em;
+    padding-right: 0.6em;
+
+    strong {
+        color: #08713e;
+    }
+
+    &:hover {
+        color: #08713e;
+    }
+
+    &.autocomplete-selected {
+        background-color: #b0cab4;
+        color: #111;
+    }
+
+    .breakpoint-medium & {
+        font-size: 3.6em;
+    }
+}
+/* style predictive search - end */
+
+
+/* Style in page search */
+.in-page-search__input {
+    box-sizing: border-box;
+    font-size: 1.2rem;
+    padding: 0 0.4em;
+    height: 41px;
+    width: calc(100% - (41px + 0.4em));
+}
+.in-page-search__button {
+    background-color: #d1e0d3;
+    cursor: pointer;
+    display: inline-block;
+    top: 0;
+    right: 0;
+    font-size: 1.2rem;
+    width: 41px;
+    height: 41px;
+    margin: 0 0 -0.75em;
+    padding: 0;
+    border: none;
+    border: solid 1px #08713e;
+    background-image: url(npsa-search-button.png);
+    background-image: url(http://www.environment.sa.gov.au/files/templates/00000000-0000-0000-0000-000000000000/c16a6c2a-2cdc-4f08-96b9-f1c11eb6f349/npsa-search-button.png);
+}
+/* Style Main content padding */
+#content.content__fullwidth {
+    float: none;
+    width: auto;
+    padding: 40px 20px 0;
+    margin: 0;
+}
+
+/* Style Custom Search Results */
+.npsa {
+    .gsc-control-cse {
+        padding: 0em;
+    }
+    .gsc-results.gsc-webResult {
+        max-width: 80%;
+    }
+    .cse .gsc-webResult.gsc-result,
+    .gsc-webResult.gsc-result,
+    .gsc-imageResult-classic,
+    .gsc-imageResult-column {
+        margin-bottom: 2em;
+    }
+    .cse .gsc-webResult.gsc-result,
+    .gsc-webResult.gsc-result,
+    .gsc-imageResult-classic,
+    .gsc-imageResult-column {
+        padding: 0;
+    }
+    .gsc-webResult.gsc-result:hover,
+    .gsc-imageResult:hover {
+        border-color: #FFFFFF;
+        background-color: #FFFFFF;
+    }
+    .gs-bidi-start-align.gs-visibleUrl.gs-visibleUrl-long {
+        font-weight: 300;
+        color: #999;
+    }
+    .gs-webResult.gs-result a.gs-title:link,
+    .gs-webResult.gs-result a.gs-title:link b,
+    .gs-imageResult a.gs-title:link,
+    .gs-imageResult a.gs-title:link b {
+        color: #08713e;
+    }
+    .gs-webResult.gs-result a.gs-title:visited,
+    .gs-webResult.gs-result a.gs-title:visited b,
+    .gs-imageResult a.gs-title:visited,
+    .gs-imageResult a.gs-title:visited b {
+        color: #075831; /* darkgreen */
+    }
+    #main.content a.gs-title {
+        text-decoration: none;
+    }
+    #main.content a.gs-title:hover {
+        text-decoration: underline;
+    }
+    .cse .gs-result .gs-snippet,
+    .gs-result .gs-snippet >:not(sup),
+    .cse .gs-spelling-original,
+    .gs-spelling-original,
+    .gsc-control-cse .gs-result .gs-title,
+    .gsc-control-cse .gs-result .gs-title * {
+        text-decoration: none;
+        font-size: 16px;
+        line-height: 1.6em;
+    }
+    .gsc-control-cse .gs-result a.gs-title,
+    .gsc-control-cse .gs-result a.gs-title * {
+        font-size: 20px;
+        line-height: 1em;
+        font-weight: 300;
+    }
+    .gs-snippet b {
+        color: #075831; /* darkgreen */
+    }
+    .gsc-control-cse,
+    .gsc-control-cse .gsc-table-result {
+        font-size: 16px;
+        line-height: 1.4em; /*1.82em; */
+    }
+    .cse .gs-result .gs-snippet,
+    .gs-result .gs-snippet,
+    .cse .gs-spelling-original,
+    .gs-spelling-original {
+        font-size: 16px;
+        line-height: 1.4em;
+    }
+    #park-detail .gsc-control-cse .gsc-table-result {
+        font-family: 'Frutiger W01', Helvetica, Arial, sans-serif;
+    }
+    .gsc-cursor-page {
+        padding: 0.5em 0.8em;
+        border: solid 1px #777777;
+        color: #333;
+    }
+    .gsc-results .gsc-cursor-box .gsc-cursor-current-page {
+        padding: 0.5em 0.8em;
+        border-color: #d1e0d3;
+        background-color: #d1e0d3;
+        color: #444444;
+        text-shadow: none;
+    }
+    .gsc-results .gsc-cursor-box .gsc-cursor-page {
+        border-color: #e0e0e0;
+    }
+    .gsc-results .gsc-cursor-box .gsc-cursor-page:hover {
+        border-color: #ffffff;
+        color: #ffffff;
+        background-color: #08713e;
+    }
+    .gsc-results .gsc-cursor-box .gsc-cursor-page:not(:hover) {
+        text-decoration: none;
+    }
+    .gcsc-branding {
+        display: none;
+    }
+    div.gs-title.gsc-table-cell-thumbnail.gsc-thumbnail-left + div:not(.gs-snippet):not(.gs-title),
+    div.gs-title.gsc-table-cell-thumbnail.gsc-thumbnail-left + div:not(.gs-snippet):not(.gs-title) span {
+        line-height: 2px;
+        display: none;
+    }
+    .gsc-result-info, .gsc-cursor-box.gs-bidi-start-align {
+        padding-left: 0;
+    }
+    #content .gsc-control-cse table, #content .gsc-control-cse td, #content .gsc-control-cse th {
+        border: none;
+        padding: 0;
+    }
+}
+
+.breakpoint-medium.scaled.inlinesvg #menu form input[type=submit] {
+    background-color: transparent;
+}
