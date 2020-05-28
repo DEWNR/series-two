@@ -1,6 +1,0 @@
-/* Combine the site-specific variables with the basic styles for the style.css file */
-
-@import "../_global.scss";      // Import the global variables
-@import "_site.scss";           // Import the site-specific variables - must be done after global variables
-@import "../_defaults.scss";    // Import the default variables - must be done after site and global variables have been imported
-@import "../_style.scss";       // Import the basic styles

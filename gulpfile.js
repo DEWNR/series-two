@@ -9,7 +9,6 @@ var argv = require('yargs').argv,   // Pass agruments using the command line
     handleErrors = require('./lib/handleErrors'),
     gulp = require('gulp'),
     gulpif = require('gulp-if'),
-    gutil = require( 'gulp-util' ),
     imagemin = require('gulp-imagemin'),    // Optimise images
     jsList,   // List of JavaScripts to combine (deprecated)
     minifyCss = require('gulp-minify-css'),     // Minify CSS
@@ -27,7 +26,7 @@ var argv = require('yargs').argv,   // Pass agruments using the command line
     // Set the variables for the root folders
 
     var dest = argv.production ? "./dist/" : "./temp/",    // Use the dist folder for a "production" build or the temp folder for all other builds
-        src = "./";
+        src = "./src/";
 
 
     // Set paths as an object
@@ -79,14 +78,6 @@ var argv = require('yargs').argv,   // Pass agruments using the command line
 
 // Define JavaScript bundles
 
-/**
- * Note: this method is deprecated. User Browserify for all new script bundles.
- **/
-
- // @codekit-prepend ../includes/jquery.mobile.custom.1409290931.js
- // @codekit-prepend ../includes/jquery.fancybox.js
- // @codekit-prepend ../includes/jquery.fancybox-thumbs.js
-
 jsList = [
     {
         source: [
@@ -119,13 +110,6 @@ jsList = [
         filename: "s2-spotlight.js"
     }
 ];
-
-// {
-//     source: [
-//         paths.src.js + "maps/*.js"
-//     ],
-//     destination: paths.dest.js + "maps/"
-// }
 
 
 
