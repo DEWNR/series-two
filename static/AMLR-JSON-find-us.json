@@ -1,0 +1,393 @@
+[{
+  "type": "park",
+  "data": {
+    "title": "Angove Conservation Park",
+    "link": "https://www.parks.sa.gov.au/find-a-park/Browse_by_region/Adelaide_Hills/angove-conservation-park",
+    "location": {"latitude": -34.8254939, "longitude": 138.7240459, "zoom": 12}
+  }
+},{
+  "type": "park",
+  "data": {
+    "title": "Aldinga Scrub Conservation Park",
+    "link": "https://www.parks.sa.gov.au/find-a-park/Browse_by_region/Fleurieu_Peninsula/aldinga-scrub-conservation-park",
+    "location": {"latitude": -35.2913921, "longitude": 138.4500374, "zoom": 8}
+  }
+},{
+  "type": "community",
+  "data": {
+    "title": "Adelaide Sustainability Centre",
+"info": "111 Franklin Street, Adelaide 5000<br />Ph: (08) 7123 2166<br /><a href=\"http://www.adelaidesustainabilitycentre.org.au\" target=\"_self\">adelaidesustainabilitycentre.org.au</a><br />",
+    "location": ""
+  }
+},{
+  "type": "park",
+  "data": {
+    "title": "Adelaide Dolphin Sanctuary",
+    "link": "https://www.parks.sa.gov.au/find-a-park/Browse_by_region/Adelaide/adelaide-dolphin-sanctuary",
+    "location": {"latitude": -34.8053222, "longitude": 138.5386986, "zoom": 9}
+  }
+},{
+  "type": "park",
+  "data": {
+    "title": "Belair National Park",
+    "link": "https://www.parks.sa.gov.au/find-a-park/Browse_by_region/Adelaide_Hills/belair-national-park",
+    "location": {"latitude": -35.0091628, "longitude": 138.6336986, "zoom": 12}
+  }
+},{
+  "type": "community",
+  "data": {
+    "title": "Adelaide Hills Community Natural Resource Centre",
+"info": "1 Crescent Drive, Norton Summit 5136<br />Ph: 08 8390 1891<br /><a href=\"http://www.ahnrc.org/\" target=\"_blank\">www.ahnrc.org</a><br />",
+    "location": {"latitude": -34.92335, "longitude": 138.72476000000006, "zoom": 12}
+  }
+},{
+  "type": "park",
+  "data": {
+    "title": "Adelaide International Bird Sanctuary National Park - Winaityinaityi Pangkara",
+    "link": "https://www.parks.sa.gov.au/find-a-park/Browse_by_region/Adelaide/adelaide-international-bird-sanctuary-national-park",
+    "location": {"latitude": -34.739059, "longitude": 138.5329027, "zoom": 10}
+  }
+},{
+  "type": "park",
+  "data": {
+    "title": "Anstey Hill Recreation Park",
+    "link": "https://www.parks.sa.gov.au/find-a-park/Browse_by_region/Adelaide/anstey-hill-recreation-park",
+    "location": {"latitude": -34.8289055, "longitude": 138.7277544, "zoom": 10}
+  }
+},{
+  "type": "park",
+  "data": {
+    "title": "Black Hill Conservation Park",
+    "link": "https://www.parks.sa.gov.au/find-a-park/Browse_by_region/Adelaide_Hills/black-hill-conservation-park",
+    "location": {"latitude": -34.8799545, "longitude": 138.7081248, "zoom": 12}
+  }
+},{
+  "type": "park",
+  "data": {
+    "title": "Hale Conservation Park",
+    "link": "https://www.parks.sa.gov.au/find-a-park/Browse_by_region/Barossa/hale-conservation-park",
+    "location": {"latitude": -34.6834713, "longitude": 138.9115639, "zoom": 12}
+  }
+},{
+  "type": "park",
+  "data": {
+    "title": "Deep Creek Conservation Park",
+    "link": "https://www.parks.sa.gov.au/find-a-park/Browse_by_region/Fleurieu_Peninsula/deep-creek-conservation-park",
+    "location": {"latitude": -35.6020182, "longitude": 138.2483791, "zoom": 7}
+  }
+},{
+  "type": "community",
+  "data": {
+    "title": "Gawler Environment Centre",
+"info": "43 High Street, Gawler East 5118<br />Ph: 08 8115 4620<br /><a href=\"http://www.nrcgawler.org.au/\" target=\"_blank\">www.nrcgawler.org.au</a><br />",
+    "location": {"latitude": -34.60438, "longitude": 138.7468, "zoom": 14}
+  }
+},{
+  "type": "park",
+  "data": {
+    "title": "Cobbler Creek Recreation Park",
+    "link": "https://www.parks.sa.gov.au/find-a-park/Browse_by_region/Adelaide/cobbler-creek-recreation-park",
+    "location": {"latitude": -34.778732, "longitude": 138.6713202, "zoom": 10}
+  }
+},{
+  "type": "park",
+  "data": {
+    "title": "Kaiserstuhl Conservation Park",
+    "link": "https://www.parks.sa.gov.au/find-a-park/Browse_by_region/Barossa/kaiserstuhl-conservation-park",
+    "location": {"latitude": -34.5851128, "longitude": 139.0116159, "zoom": 12}
+  }
+},{
+  "type": "park",
+  "data": {
+    "title": "Encounter Marine Park",
+    "link": "https://www.parks.sa.gov.au/find-a-park/Browse_by_region/Fleurieu_Peninsula/encounter-marine-park",
+    "location": ""
+  }
+},{
+  "type": "park",
+  "data": {
+    "title": "Blackwood Forest Recreation Park",
+    "link": "https://www.parks.sa.gov.au/find-a-park/Browse_by_region/Adelaide_Hills/blackwood-forest-recreation-park",
+    "location": {"latitude": -35.0289047, "longitude": 138.6261974, "zoom": 10}
+  }
+},{
+  "type": "community",
+  "data": {
+    "title": "Mount Pleasant Natural Resource Centre",
+"info": "132 Melrose Street, Mount Pleasant 5235<br />Ph: 08 8568 1907<br /><a href=\"https://www.barossa.sa.gov.au/sections/development-works-services/environment/mount-pleasant-natural-resource-centre\" target=\"_blank\">www.barossa.sa.gov.au</a><br />",
+    "location": {"latitude": -34.77339, "longitude": 139.05063999999993, "zoom": 14}
+  }
+},{
+  "type": "park",
+  "data": {
+    "title": "Fort Glanville Conservation Park",
+    "link": "https://www.parks.sa.gov.au/find-a-park/Browse_by_region/Adelaide/fort-glanville-conservation-park",
+    "location": {"latitude": -34.8510331, "longitude": 138.4778368, "zoom": 10}
+  }
+},{
+  "type": "park",
+  "data": {
+    "title": "Brownhill Creek Recreation Park",
+    "link": "https://www.parks.sa.gov.au/find-a-park/Browse_by_region/Adelaide_Hills/brownhill-creek-recreation-park",
+    "location": {"latitude": -34.9840762, "longitude": 138.6253795, "zoom": 12}
+  }
+},{
+  "type": "park",
+  "data": {
+    "title": "Sandy Creek Conservation Park",
+    "link": "https://www.parks.sa.gov.au/find-a-park/Browse_by_region/Barossa/sandy-creek-conservation-park",
+    "location": {"latitude": -34.6049756, "longitude": 138.8540319, "zoom": 12}
+  }
+},{
+  "type": "community",
+  "data": {
+    "title": "Normanville Natural Resource Centre",
+"info": "3/50 Main Street, Normanville 5204<br />Ph: 08 8558 3644<br /><a href=\"http://www.nnrc.com.au/\" target=\"_blank\">www.nnrc.com.au</a><br />",
+    "location": {"latitude": -35.44672, "longitude": 138.31737999999996, "zoom": 14}
+  }
+},{
+  "type": "park",
+  "data": {
+    "title": "Glenthorne National Park",
+    "link": "https://www.parks.sa.gov.au/find-a-park/Browse_by_region/Adelaide/glenthorne-national-park",
+    "location": ""
+  }
+},{
+  "type": "park",
+  "data": {
+    "title": "Granite Island Recreation Park",
+    "link": "https://www.parks.sa.gov.au/find-a-park/Browse_by_region/Fleurieu_Peninsula/granite-island-recreation-park",
+    "location": {"latitude": -35.5605148, "longitude": 138.6273719, "zoom": 7}
+  }
+},{
+  "type": "community",
+  "data": {
+    "title": "South Coast Environment Centre",
+"info": "9/46 Ocean Street, Victor Harbor 5211<br />Ph: 08 8552 9423<br /><a href=\"http://www.scecentre.com.au\" target=\"_blank\">www.scecentre.com.au</a><br />",
+    "location": {"latitude": -35.553746, "longitude": 138.623142, "zoom": 13}
+  }
+},{
+  "type": "park",
+  "data": {
+    "title": "Cleland Conservation Park",
+    "link": "https://www.parks.sa.gov.au/find-a-park/Browse_by_region/Adelaide_Hills/cleland-conservation-park",
+    "location": {"latitude": -34.9684936, "longitude": 138.6811014, "zoom": 12}
+  }
+},{
+  "type": "park",
+  "data": {
+    "title": "Hallett Cove Conservation Park",
+    "link": "https://www.parks.sa.gov.au/find-a-park/Browse_by_region/Adelaide/hallett-cove-conservation-park",
+    "location": {"latitude": -35.075237, "longitude": 138.4979896, "zoom": 10}
+  }
+},{
+  "type": "park",
+  "data": {
+    "title": "Cleland Wildlife Park",
+    "link": "https://www.clelandwildlifepark.sa.gov.au/Home",
+    "location": ""
+  }
+},{
+  "type": "community",
+  "data": {
+    "title": "Willunga Environment Centre Inc.",
+"info": "18 High Street, Willunga 5172<br />Ph: 08 8556 4188<br /><a href=\"http://www.willungaenviro.org.au/\" target=\"_blank\">www.willungaenviro.org.au</a><br />",
+    "location": {"latitude": -35.27288, "longitude": 138.55529, "zoom": 14}
+  }
+},{
+  "type": "park",
+  "data": {
+    "title": "Marino Conservation Park",
+    "link": "https://www.parks.sa.gov.au/find-a-park/Browse_by_region/Adelaide/marino-conservation-park",
+    "location": {"latitude": -35.05075, "longitude": 138.511933, "zoom": 10}
+  }
+},{
+  "type": "park",
+  "data": {
+    "title": "Ferguson Conservation Park",
+    "link": "https://www.parks.sa.gov.au/find-a-park/Browse_by_region/Adelaide_Hills/ferguson-conservation-park",
+    "location": {"latitude": -34.9307312, "longitude": 138.6680774, "zoom": 12}
+  }
+},{
+  "type": "park",
+  "data": {
+    "title": "Moana Sands Conservation Park",
+    "link": "https://www.parks.sa.gov.au/find-a-park/Browse_by_region/Fleurieu_Peninsula/moana-sands-conservation-park",
+    "location": {"latitude": -35.2062526, "longitude": 138.4706667, "zoom": 7}
+  }
+},{
+  "type": "centre",
+  "data": {
+    "title": "Eastwood Natural Resources Centre",
+"info": "205 Greenhill Road, Eastwood 5063<br />Ph: 08 8273 9100<br />",
+    "location": {"latitude": -34.94086, "longitude": 138.6191, "zoom": 14}
+  }
+},{
+  "type": "park",
+  "data": {
+    "title": "O'Halloran Hill Recreation Park",
+    "link": "https://www.parks.sa.gov.au/find-a-park/Browse_by_region/Adelaide/ohalloran-hill-recreation-park",
+    "location": {"latitude": -35.0524451, "longitude": 138.5397017, "zoom": 12}
+  }
+},{
+  "type": "park",
+  "data": {
+    "title": "Horsnell Gully and Giles Conservation Parks",
+    "link": "https://www.parks.sa.gov.au/find-a-park/Browse_by_region/Adelaide_Hills/horsnell-gully-giles-conservation-parks",
+    "location": {"latitude": -34.9305132, "longitude": 138.7016197, "zoom": 12}
+  }
+},{
+  "type": "centre",
+  "data": {
+    "title": "Gawler Natural Resources Centre",
+"info": "43 High Street, Gawler East 5118<br />Ph: 08 8115 4600<br />",
+    "location": {"latitude": -34.596898, "longitude": 138.749886, "zoom": 14}
+  }
+},{
+  "type": "park",
+  "data": {
+    "title": "Mark Oliphant Conservation Park",
+    "link": "https://www.parks.sa.gov.au/find-a-park/Browse_by_region/Adelaide_Hills/mark-oliphant-conservation-park",
+    "location": {"latitude": -35.0362461, "longitude": 138.7078973, "zoom": 12}
+  }
+},{
+  "type": "park",
+  "data": {
+    "title": "Shepherds Hill Recreation Park",
+    "link": "https://www.parks.sa.gov.au/find-a-park/Browse_by_region/Adelaide/shepherds-hill-recreation-park",
+    "location": {"latitude": -35.0114658, "longitude": 138.5802676, "zoom": 12}
+  }
+},{
+  "type": "park",
+  "data": {
+    "title": "Newland Head Conservation Park",
+    "link": "https://www.parks.sa.gov.au/find-a-park/Browse_by_region/Fleurieu_Peninsula/newland-head-conservation-park",
+    "location": {"latitude": -35.6197703, "longitude": 138.4867884, "zoom": 7}
+  }
+},{
+  "type": "centre",
+  "data": {
+    "title": "Black Hill Natural Resources Centre",
+"info": "115 Maryvale Road, Athelstone 5076<br />Ph: 08 8336 0901<br />",
+    "location": {"latitude": -34.883558, "longitude": 138.704093, "zoom": 14}
+  }
+},{
+  "type": "park",
+  "data": {
+    "title": "Montacute Conservation Park",
+    "link": "https://www.parks.sa.gov.au/find-a-park/Browse_by_region/Adelaide_Hills/montacute-conservation-park",
+    "location": {"latitude": -34.8836937, "longitude": 138.7740048, "zoom": 12}
+  }
+},{
+  "type": "park",
+  "data": {
+    "title": "Onkaparinga River National Park",
+    "link": "https://www.parks.sa.gov.au/find-a-park/Browse_by_region/Fleurieu_Peninsula/onkaparinga-river-national-park",
+    "location": {"latitude": -35.145477, "longitude": 138.5785801, "zoom": 7}
+  }
+},{
+  "type": "park",
+  "data": {
+    "title": "Sturt Gorge Recreation Park",
+    "link": "https://www.parks.sa.gov.au/find-a-park/Browse_by_region/Adelaide/sturt-gorge-recreation-park",
+    "location": {"latitude": -35.0353313, "longitude": 138.6028923, "zoom": 12}
+  }
+},{
+  "type": "centre",
+  "data": {
+    "title": "Willunga Natural Resources Centre",
+"info": "5 Aldinga Road, Willunga 5172<br />Ph: 08 8550 3400<br />PO Box 781, Willunga 5172 <br />",
+    "location": {"latitude": -35.27197, "longitude": 138.55369999999994, "zoom": 13}
+  }
+},{
+  "type": "park",
+  "data": {
+    "title": "Morialta Conservation Park",
+    "link": "https://www.parks.sa.gov.au/find-a-park/Browse_by_region/Adelaide_Hills/morialta-conservation-park",
+    "location": {"latitude": -34.9029701, "longitude": 138.7016289, "zoom": 12}
+  }
+},{
+  "type": "park",
+  "data": {
+    "title": "Onkaparinga River Recreation Park",
+    "link": "https://www.parks.sa.gov.au/find-a-park/Browse_by_region/Fleurieu_Peninsula/onkaparinga-river-recreation-park",
+    "location": {"latitude": -35.1573796, "longitude": 138.4987118, "zoom": 7}
+  }
+},{
+  "type": "community",
+  "data": {
+    "title": "Barossa Bushgardens Natural Resource Centre",
+"info": "653 Research Road, Nuriootpa 5355<br />Ph: 08 8563 8330<br /><a href=\"https://www.barossa.sa.gov.au/sections/community-cultural-services/community-recreational-facilities/barossa-bushgardens\" target=\"_blank\">barossa.sa.gov.au</a><br />",
+    "location": {"latitude": -34.445739, "longitude": 139.02089, "zoom": 5}
+  }
+},{
+  "type": "park",
+  "data": {
+    "title": "Tennyson Dunes Conservation Reserve",
+    "link": "https://www.parks.sa.gov.au/find-a-park/Browse_by_region/Adelaide/tennyson-dunes-conservation-reserve",
+    "location": {"latitude": -34.8804336, "longitude": 138.4845695, "zoom": 11}
+  }
+},{
+  "type": "park",
+  "data": {
+    "title": "Mount George Conservation Park",
+    "link": "https://www.parks.sa.gov.au/find-a-park/Browse_by_region/Adelaide_Hills/mount-george-conservation-park",
+    "location": {"latitude": -34.9970361, "longitude": 138.7497019, "zoom": 12}
+  }
+},{
+  "type": "centre",
+  "data": {
+    "title": "Victor Harbor Natural Resources Centre",
+"info": "3 Eyre Terrace, Victor Harbor 5211<br />Ph: 08 8552 0300<br />",
+    "location": {"latitude": -35.552089, "longitude": 138.623744, "zoom": 12}
+  }
+},{
+  "type": "centre",
+  "data": {
+    "title": "Woodside Natural Resources Centre",
+"info": "1/33b Onkaparinga Valley Road, Woodside 5244<br />Ph: 08 8336 0901<br />Open 9 am – 5 pm every Friday. All other times by appointment.<br />",
+    "location": {"latitude": -34.949677, "longitude": 138.876115, "zoom": 14}
+  }
+},{
+  "type": "park",
+  "data": {
+    "title": "Mount Lofty Summit",
+    "link": "https://www.parks.sa.gov.au/find-a-park/Browse_by_region/Adelaide_Hills/mount-lofty-summit",
+    "location": {"latitude": -34.9756213, "longitude": 138.7096426, "zoom": 12}
+  }
+},{
+  "type": "park",
+  "data": {
+    "title": "Mylor Conservation Park",
+    "link": "https://www.parks.sa.gov.au/find-a-park/Browse_by_region/Adelaide_Hills/mylor-conservation-park",
+    "location": {"latitude": -35.0401412, "longitude": 138.7676691, "zoom": 12}
+  }
+},{
+  "type": "park",
+  "data": {
+    "title": "Para Wirra Conservation Park",
+    "link": "https://www.parks.sa.gov.au/find-a-park/Browse_by_region/Adelaide_Hills/para-wirra-conservation-park",
+    "location": {"latitude": -34.6934736, "longitude": 138.8138948, "zoom": 12}
+  }
+},{
+  "type": "park",
+  "data": {
+    "title": "Scott Creek Conservation Park",
+    "link": "https://www.parks.sa.gov.au/find-a-park/Browse_by_region/Adelaide_Hills/scott-creek-conservation-park",
+    "location": {"latitude": -35.0856955, "longitude": 138.6729911, "zoom": 12}
+  }
+},{
+  "type": "park",
+  "data": {
+    "title": "Warren Conservation Park",
+    "link": "https://www.parks.sa.gov.au/find-a-park/Browse_by_region/Adelaide_Hills/warren-conservation-park",
+    "location": {"latitude": -34.7256664, "longitude": 138.9055728, "zoom": 9}
+  }
+},{
+  "type": "park",
+  "data": {
+    "title": "Waterfall Gully",
+    "link": "https://www.parks.sa.gov.au/find-a-park/Browse_by_region/Adelaide_Hills/waterfall-gully",
+    "location": {"latitude": -34.9685517, "longitude": 138.6788416, "zoom": 12}
+  }
+}]
